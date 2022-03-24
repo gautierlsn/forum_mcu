@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+
+
+.logo-circle{
+    transition: transform .7s ease-in-out;
+}
+.logo-circle:hover{
+    transform: rotate(360deg);
+}
+
+a#back-to-top {
+	border-radius: 25px;
+	background-color: white;
+}
+
+#back-to-top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	right: 20px;
+	bottom: 20px;
+	background: none;
+	animation-duration: 1s;
+	z-index: 9;
+}
+
+
+/*Style général*/
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+}
+body, html {
+	height: 100%;
+}
+html {
+	position: relative;
+	min-height: 100%;
+	scroll-behavior: smooth;
+}
+a:hover{
+	text-decoration: none;
+}
+.separator_white{
+	height: 80px;
+}
+.mini_separator_white{
+	height: 40px;
+}
+div.card img{
+	height: 190px;
+}
+.title_produit{
+	text-align: center;
+}
+.block{
+	display: block;
+}
+.border-card{
+	border-radius: 5% 5% 5% 5%;
+}
+.border-card3{
+	border-radius: 5% 5% 5% 5%;
+	width: 410px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+}
+.border-img{
+	border-radius: 5% 5% 0 0;
+}
+.price{
+	text-align: center;
+}
+.width300{
+	width: 300px;
+}
+.font30{
+	font-size: 30px;
+}
+.font40{
+	font-size: 40px;
+}
+.list-group-item{
+	font-size: 20px;
+}
+.list-group-item.list-group-item-secondary{
+	font-size: 35px;
+}
+.font50{
+	font-size: 50px;
+}
+.red{
+	color: red;
+}
+a.btn.btn-primary.block{
+	margin-top: 10px;
+}
+span.help-inline{
+	color: red;
+}
+h2 + input{
+	margin-top:20px;
+}
+h3{
+	font-family: "Quicksand", sans-serif;
+}
+button + p{
+	margin-top:20px;
+}
+form + div{
+	margin-top: 75px;
+}
+nav + form{
+	margin-top: 40px;
+}
+h2{
+	margin-top: 50px;
+}
+table{
+	margin-top: 50px;
+}
+ul{
+	margin-bottom: 0 !important;
+}
+p{
+	margin-bottom: 0;
+}
+/*Fin style général*/
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Login*/
+.bg {
+	background: rgb(34,70,139);
+	background: linear-gradient(162deg, rgba(34,70,139,1) 10%, rgba(42,88,171,1) 43%, rgba(40,190,196,1) 84%);
+}
+.my-form{
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+.my-form .row,
+.login-form .row{
+	margin-left: 0;
+	margin-right: 0;
+}
+.login-form{
+	vertical-align: middle;
+}
+.card-top{
+	margin-top: 150px;
+}
+.card-header{
+	text-align: center;
+	font-size: 30px;
+}
+.card-height{
+	height: auto;
+}
+.blur {
+	background-size: cover;
+	overflow: hidden;
+	filter: blur(4px);
+	position: absolute;
+	top: -7px;
+	left: 5px;
+	right: 5px;
+	bottom: -8px;
+	z-index: -1;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+form[data-type="login-form"] .form-control, form[data-type="register-form"] .form-control{
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-width: 2px;
+	border-radius: 0;
+	transition: 0.55s;
+}
+form[data-type="login-form"] .form-control:hover, form[data-type="register-form"] .form-control:hover{
+	transition: 0.55s;
+	border-bottom-color:#007bff;
+}
+form .btn{
+	border-radius: 25px;
+	background-color: #007bff;
+	color: white;
+}
+form[data-type="login-form"], form[data-type="register-form"]{
+	font-family: "Quicksand", sans-serif;
+}
+form .btn>i#turn{
+	transition: 0.55s;
+	transform: rotate(0deg);
+}
+form .btn:hover>i#turn{
+	transition: 0.55s;
+	transform: rotate(360deg);
+}
+form[data-type="login-form"] div input, form[data-type="login-form"] div select,
+form[data-type="register-form"] div input, form[data-type="register-form"] div select{
+	animation-name: animSlideFromRight;
+	animation-duration: 0.7s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	animation-delay: 0.1s;
+}
+form[data-type="login-form"] div label,
+form[data-type="register-form"] div label{
+	animation-name: animSlideFromLeft;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	animation-delay: 0.5s;
+}
+form[data-type="login-form"] div button,
+form[data-type="register-form"] div button{
+	animation-name: animSlideFromBottom;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	animation-delay: 0.8s;
+}
+@keyframes animSlideFromRight {
+	from{
+		transform: translateX(300px);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes animSlideFromLeft {
+	from{
+		transform: translateX(-150px);
+		opacity: 0;
+	}
+	to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes animSlideFromBottom {
+	from{
+		transform: translateY(150px);
+		opacity: 0;
+	}
+	to{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+/*Fin Login*/
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*NavBar*/
+nav{
+	background: #1b1b1b;
+	font-family: Quicksand, sans-serif;
+	font-weight: 500;
+}
+nav:after{
+	content: '';
+	clear: both;
+	display: table;
+}
+nav .logo{
+	float: left;
+	color: white;
+	font-size: 27px;
+	font-weight: 600;
+	line-height: 70px;
+	padding-left: 60px;
+}
+nav ul{
+	float: right;
+	margin-right: 40px;
+	list-style: none;
+	position: relative;
+}
+nav ul li{
+	float: left;
+	display: inline-block;
+	background: #1b1b1b;
+	margin: 0 5px;
+}
+nav ul li a{
+	color: white;
+	line-height: 70px;
+	text-decoration: none;
+	font-size: 18px;
+	padding: 8px 15px;
+}
+nav ul li a.active,
+nav ul li a:hover{
+	color: cyan;
+	border-radius: 5px;
+	box-shadow:  0 0 5px #33ffff,
+	0 0 10px #66ffff;
+}
+nav ul ul li a:hover{
+	box-shadow: none;
+}
+nav ul ul{
+	position: absolute;
+	top: 90px;
+	border-top: 3px solid cyan;
+	opacity: 0;
+	visibility: hidden;
+	transition: top .3s;
+}
+nav ul ul ul{
+	border-top: none;
+}
+nav ul li:hover > ul{
+	top: 70px;
+	opacity: 1;
+	visibility: visible;
+}
+nav ul ul li{
+	position: relative;
+	margin: 0;
+	width: 150px;
+	float: none;
+	display: list-item;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+	line-height: 50px;
+}
+nav ul ul ul li{
+	position: relative;
+	top: -60px;
+	left: 150px;
+}
+.show,.icon,#btn-1,#btn{
+	display: none;
+}
+.fa-plus{
+	font-size: 15px;
+	margin-left: 40px;
+}
+
+@media all and (max-width: 968px) {
+	nav ul{
+		margin-right: 0;
+		float: left;
+	}
+	nav .logo{
+		padding-left: 30px;
+		width: 100%;
+	}
+	.show + a, ul{
+		display: none;
+	}
+	nav ul li,nav ul ul li{
+		display: block;
+		width: 100%;
+	}
+	nav ul li a:hover{
+		box-shadow: none;
+	}
+	.show{
+		display: block;
+		color: white;
+		font-size: 18px;
+		padding: 0 20px;
+		line-height: 70px;
+		cursor: pointer;
+	}
+	.show:hover{
+		color: cyan;
+	}
+	.icon{
+		display: block;
+		color: white;
+		position: absolute;
+		top: 0;
+		right: 40px;
+		line-height: 70px;
+		cursor: pointer;
+		font-size: 25px;
+	}
+	nav ul ul{
+		top: 70px;
+		border-top: 0;
+		float: none;
+		position: static;
+		display: none;
+		opacity: 1;
+		visibility: visible;
+	}
+	nav ul ul a{
+		padding-left: 40px;
+	}
+	nav ul ul ul a{
+		padding-left: 80px;
+	}
+	nav ul ul ul li{
+		position: static;
+	}
+	[id^=btn]:checked + ul{
+		display: block;
+	}
+	nav ul ul li{
+		border-bottom: 0;
+	}
+	span.cancel:before{
+		content: '\f00d';
+	}
+}
+/*Fin NavBar*/
