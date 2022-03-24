@@ -10,7 +10,7 @@
 
     <div class="container">
         <div class="row mx-auto text-center mt-5">
-            <h1 class="mx-auto text-center"><strong><i class="fas fa-angle-left"></i> Forum <i class="fas fa-angle-right"></i></strong></h1>
+            <h1 class="mx-auto text-center"><strong><i class="fas fa-angle-left"></i> Forum MCU <i class="fas fa-angle-right"></i></strong></h1>
         </div>
 
         <div class="row mt-5">
