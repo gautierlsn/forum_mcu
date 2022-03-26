@@ -9,7 +9,7 @@ function makeHead($bootstrap,$css,$jquery,$scriptjs){
     <title>Forum MCU</title >
     <meta charset = "UTF-8" >
     <meta name ="viewport" content = "user-scalable=0, width=device-width, maximum-scale=1.0, initial-scale=1.0">
-    <link rel ="stylesheet" href = "'.$bootstrap.'">
+    <link rel ="stylesheet" href = "'.$bootstrap.'"> //A supprimer pour tester sans bootstrap
     <link rel ="stylesheet" href = "'.$css.'">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">

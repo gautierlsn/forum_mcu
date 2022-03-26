@@ -38,14 +38,14 @@
                             <?php
                             if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1){
                             ?>       
-                            <a href="view_discussion.php?idTopic=<?=$topic['id_discussion']?>" class="btn btn-warning btn_home_forum" ><i class="fas fa-eye"></i></a>
+                            <a href="view_discussion.php?idTopic=<?=$topic['id_discussion']?>" class="btn btn-warning" ><i class="fas fa-eye"></i></a>
                             <a href="../Script_PHP/do_delete.php?action=deleteDiscussion&idTopic=<?=$topic["id_discussion"]?>" class="btn btn-danger btn_home_forum" ><i class="fas fa-trash-alt"></i></a>
                             
                             <?php
                             }
                             else{
                             ?>
-                                <a href="view_discussion.php?idTopic=<?=$topic['id_discussion']?>" class="btn btn-warning btn_home_forum">Voir <i class="fas fa-eye"></i></a>
+                                <a href="view_discussion.php?idTopic=<?=$topic['id_discussion']?>" class="btn btn-warning">Voir <i class="fas fa-eye"></i></a>
                             <?php
                             }
                             ?>
