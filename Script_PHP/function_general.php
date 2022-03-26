@@ -2,7 +2,7 @@
 
 //Création du Head
 function makeHead($bootstrap,$css,$jquery,$scriptjs){
-echo'
+    echo'
 <!DOCTYPE html>
 <html lang = "fr">
 <head>

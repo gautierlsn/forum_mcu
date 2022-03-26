@@ -1,10 +1,10 @@
 <?php
 
 class Database{
-    private static $dbHost = "mysql-gautierluisin.alwaysdata.net";
-    private static $dbName = "gautierluisin_forum_mcu";
-    private static $dbUsername = "174412";
-    private static $dbUserpassword = "forum_mcu_mdp";
+    private static $dbHost = "localhost";
+    private static $dbName = "forum_mcu";
+    private static $dbUsername = "root";
+    private static $dbUserpassword = "";
     private static $connection = null;
     
     public static function connect(){
