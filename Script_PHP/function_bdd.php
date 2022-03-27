@@ -179,11 +179,9 @@ function showInfoProfile($id){
         <div class="row">
             <h1 class="mx-auto text-center"><strong><i class="fas fa-angle-left"></i> Profil <i class="fas fa-angle-right"></i></strong></h1>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-10 mb-5">
-                <ul class="list-group text-center">
+        <div>
+            <div>
+                <ul class="list-group-item-ul text-center">
                     <li class="list-group-item list-group-item-secondary" aria-current="true">Vos informations :</li>
                     <li class="list-group-item">Nom : '.$item['nom'].'</li>
                     <li class="list-group-item">Prénom : '.$item['prenom'].'</li>
@@ -373,7 +371,7 @@ function dashboard_admin(){
         <div class="row mb-4">
             <h1 class="mx-auto text-center"><strong><i class="fas fa-angle-left"></i> Admin <i class="fas fa-angle-right"></i></strong></h1>
         </div>
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered responsive">
             <thead class="text-center">
             <tr>
                 <th>Nom</th>

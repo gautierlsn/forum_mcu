@@ -2,7 +2,7 @@
     session_start();
     require("../Script_PHP/function_general.php");
     require("../Script_PHP/function_bdd.php");
-    makeHead("../CSS/bootstrap.min.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
+    makeHead("../CSS/stylesheet.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
     nav("#","profile.php","../web_page_admin/admin.php","#");
     verifLogin();
     $topics = getAllTopics();
@@ -14,7 +14,7 @@
         </div>
 
         <div class="row mt-5">
-            <a href="create_discussion.php" class="btn btn-success btn-lg text-center mx-auto">Créer une discussion <i class="fas fa-plus-circle"></i></a>
+            <a href="create_discussion.php" class="btn btn-success text-center mx-auto">Créer une discussion <i class="fas fa-plus-circle"></i></a>
         </div>
 
         <div class="row mt-5">
@@ -57,4 +57,4 @@
             ?>
         </div>
     </div>
-    <a href="#home" id="back-to-top" class="text-center" style="display: block;"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
+    <a href="#" id="back-to-top" class="text-center" style="display: block;"><i class="fas fa-3x fa-chevron-circle-up"></i></a>

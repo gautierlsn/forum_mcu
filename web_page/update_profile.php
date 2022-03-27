@@ -2,8 +2,8 @@
     session_start();
     require("../Script_PHP/function_general.php");
     require("../Script_PHP/function_bdd.php");
-    makeHead("../CSS/bootstrap.min.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
-    nav("panier.php","profile.php","pizza.php","boisson.php","dessert.php","../web_page_admin/admin.php","commande.php","profile.php");
+    makeHead("../CSS/stylesheet.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
+    nav("forum.php","profile.php","pizza.php","boisson.php","dessert.php","../web_page_admin/admin.php","commande.php","profile.php");
     verifLogin();
     $nameError = $prenomError = $adresseError = $loginError = $mdpError = "";
     if(!empty($_POST)){

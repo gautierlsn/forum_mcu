@@ -1,7 +1,7 @@
 <?php
 
 //Création du Head
-function makeHead($bootstrap,$css,$jquery,$scriptjs){
+function makeHead($css,$jquery,$scriptjs){
     echo'
 <!DOCTYPE html>
 <html lang = "fr">
@@ -9,8 +9,7 @@ function makeHead($bootstrap,$css,$jquery,$scriptjs){
     <title>Forum MCU</title >
     <meta charset = "UTF-8" >
     <meta name ="viewport" content = "user-scalable=0, width=device-width, maximum-scale=1.0, initial-scale=1.0">
-    <link rel ="stylesheet" href = "'.$bootstrap.'"> //A supprimer pour tester sans bootstrap
-    <link rel ="stylesheet" href = "'.$css.'">
+    <link rel="stylesheet" href="'.$css.'">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
@@ -97,31 +96,31 @@ function register_form($msg_error){
                                     <!-- Formulaire de Login -->
                                     <form name="selectForm" id="login" data-type="login-form" action="../Script_PHP/do_inscription.php" method="POST">
                                         <div class="form-group row">
-                                            <label for="nom" class="col-md-4 col-form-label text-md-right text-nowrap">Nom <i class="fas fa-user"></i></label>
+                                            <label for="nom" class="col-md-4 col-form-label text-md-center text-nowrap">Nom <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
                                                 <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="prenom" class="col-md-4 col-form-label text-md-right text-nowrap">Prénom <i class="fas fa-user"></i></label>
+                                            <label for="prenom" class="col-md-4 col-form-label text-md-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
                                                 <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="dateNaiss" class="col-md-4 col-form-label text-md-right text-nowrap">Date de naissance <i class="fas fa-user"></i></label>
-                                            <div class="col-md-6">
+                                            <label for="dateNaiss" class="col-md-4 col-form-label text-md-center text-nowrap">Date de naissance <i class="fas fa-user"></i></label>
+                                            <div class="col-md-6 text-center">
                                                 <input type="date" id="dateNaiss" name="dateNaiss" value="2018-07-22" min="2018-01-01" max="2018-12-31">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="email_address" class="col-md-4 col-form-label text-md-right text-nowrap">Email <i class="fas fa-user"></i></label>
+                                            <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
                                                 <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="email" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="password" class="col-md-4 col-form-label text-md-right text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
+                                            <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
                                             <div class="col-md-6">
                                                 <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse" required>
                                             </div>
@@ -153,8 +152,8 @@ if ($_SESSION['admin'] != 1){
 }
 echo '
 <body>
-    <nav>
-        <a href="../web_page/forum.php"> <img src="../images/bouclier.jpg" class="image logo-circle" style="width: 3%"> </a>
+    <nav class="topnav">
+        <a href="../web_page/forum.php"> <img src="../images/bouclier.png" class="image logo-circle"> </a>
         <label for="btn" class="icon">
             <span class="fa fa-bars"></span>
         </label>
@@ -168,7 +167,7 @@ echo '
              echo'
             <li><a href="../Script_PHP/logout.php">Déconnexion</a></li>
         </ul>
-    </nav >
+    </nav>
 ';
 }
 
