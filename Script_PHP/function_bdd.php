@@ -371,7 +371,7 @@ function dashboard_admin(){
         <div class="row mb-4">
             <h1 class="mx-auto text-center"><strong><i class="fas fa-angle-left"></i> Admin <i class="fas fa-angle-right"></i></strong></h1>
         </div>
-        <table class="table table-striped table-bordered responsive">
+        <table class="table table-bordered">
             <thead class="text-center">
             <tr>
                 <th>Nom</th>
@@ -390,7 +390,7 @@ function dashboard_admin(){
                 echo '<td>'. $item['dateNaiss'] . '</td>';
                 echo '<td>'. $item['email'] . '</td>';
                 echo '<td class="width300">';
-                echo '<a class="btn btn-danger" href="../web_page_admin/delete.php?id='.$item['id_utilisateur'].'">Supprimer <i class="fas fa-trash"></i></a>';
+                echo '<a class="btn btn-danger" href="../web_page_admin/delete.php?id='.$item['id_utilisateur'].'">  Supprimer <br/> <i class="fas fa-trash"></i></a>';
                 echo '</td>';
                 echo '</tr>';
             }

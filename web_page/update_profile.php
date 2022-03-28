@@ -3,7 +3,7 @@
     require("../Script_PHP/function_general.php");
     require("../Script_PHP/function_bdd.php");
     makeHead("../CSS/stylesheet.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
-    nav("forum.php","profile.php","pizza.php","boisson.php","dessert.php","../web_page_admin/admin.php","commande.php","profile.php");
+    nav("forum.php","profile.php","../web_page_admin/admin.php","#","dessert.php","../web_page_admin/admin.php","commande.php","profile.php");
     verifLogin();
     $nameError = $prenomError = $adresseError = $loginError = $mdpError = "";
     if(!empty($_POST)){
