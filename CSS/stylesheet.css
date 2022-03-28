@@ -227,13 +227,18 @@ p {
 }
 
 .my-form .row,
-.login-form .row {
-    margin-left: 0;
-    margin-right: 0;
+.login-form .row,
+.register-form .row{
+    margin-left: 6vh;
+    margin-right: 6vh;
 }
 
 .login-form {
-    margin-top: 60vh;
+    margin-top: 25vh;
+}
+
+.register-form {
+    margin-top: 10vh;
 }
 
 .card-top {
