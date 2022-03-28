@@ -44,13 +44,13 @@ echo '
                                 <!-- Formulaire de Login -->
                                 <form name="selectForm" id="login" data-type="login-form" action="Script_PHP/do_login.php" method="POST">
                                     <div class="form-group row">
-                                        <label for="email_address" class="col-md-4 col-form-label text-md-right text-nowrap">Email <i class="fas fa-user"></i></label>
+                                        <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
                                         <div class="col-md-6">
                                             <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="login" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="password" class="col-md-4 col-form-label text-md-right text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
+                                        <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
                                         <div class="col-md-6">
                                             <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse" required>
                                         </div>
@@ -196,8 +196,7 @@ echo'
 function checkInput($data){
     $data = trim($data);
     $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+    return htmlspecialchars($data);
 }
 ?>
 

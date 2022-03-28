@@ -20,8 +20,9 @@ $comments = getAllCommentsByTopics($idTopic);
         </div>
 
         <div class="modal-footer">
-            <p><?= $topic["nom"] ?> <?= $topic["prenom"] ?></p>
-            <p><?= $topic["date_creation_fr"] ?></p>
+            <p style="font-weight: bold">Discussion créée par : </p> <p><?= $topic["nom"] ?> <?= $topic["prenom"] ?></p>
+            <br/>
+            <p style="font-weight: bold"> Date de création : <p/> <p><?= $topic["date_creation_fr"] ?></p>
         </div>
 
     </div>
@@ -46,7 +47,7 @@ $comments = getAllCommentsByTopics($idTopic);
         <hr>
         <p><?= $Onecomment['contenu'] ?></p>
         <hr>
-        <p class="date_topic">Le <?php echo $newDate ?></p>
+        <p style="font-weight: bold">Posté le :</p> <p class="date_topic"><?php echo $newDate ?></p>
 
         <?php if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1) { ?>
             <a href="../Script_PHP/do_delete.php?action=deleteMessage&idMessage=<?= $Onecomment["id_message"] ?>&idTopic=<?= $idTopic ?>">

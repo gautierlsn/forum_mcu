@@ -121,7 +121,7 @@ div.card img {
     border: 1px solid rgba(0, 0, 0, .125);
     margin: auto;
     color: #232C33;
-    overflow-x:auto;
+    overflow-x: auto;
 }
 
 .list-group-item {
@@ -145,12 +145,10 @@ div.card img {
 }
 
 
-
 .list-group-item:last-child {
     border-bottom-right-radius: .25rem;
     border-bottom-left-radius: .25rem
 }
-
 
 
 .list-group-item.list-group-item-secondary {
@@ -235,7 +233,7 @@ p {
 }
 
 .login-form {
-    vertical-align: middle;
+    margin-top: 40px;
 }
 
 .card-top {
@@ -377,6 +375,7 @@ nav:after {
     clear: both;
     display: table;
 }
+
 nav ul {
     float: right;
     margin-right: 40px;
@@ -861,7 +860,7 @@ hr {
 .table {
     margin-bottom: 1rem;
     color: #212529;
-    position:absolute;
+    position: absolute;
     right: 0;
     width: 5px;
     cursor: col-resize;
@@ -870,7 +869,7 @@ hr {
 
 .table-bordered {
     border: 1px solid #dee2e6;
-    width:100%
+    width: 100%
 }
 
 .table-bordered td, .table-bordered th {
