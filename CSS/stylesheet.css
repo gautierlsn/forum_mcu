@@ -217,8 +217,8 @@ p {
 
 /*Login*/
 .bg {
-    background: rgb(34, 70, 139);
-    background: linear-gradient(162deg, rgba(34, 70, 139, 1) 10%, rgba(42, 88, 171, 1) 43%, rgba(40, 190, 196, 1) 84%);
+    background-image: url("../file/mcu.jpg");
+    background-color: #cccccc;
 }
 
 .my-form {
@@ -233,7 +233,7 @@ p {
 }
 
 .login-form {
-    margin-top: 40px;
+    margin-top: 60vh;
 }
 
 .card-top {
@@ -620,6 +620,10 @@ nav ul ul ul li {
 
 .mr-auto, .mx-auto {
     margin-right: auto !important;
+}
+
+.mt-3 {
+    margin-top: 2rem !important;
 }
 
 .mt-5 {
