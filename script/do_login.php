@@ -1,5 +1,6 @@
 <?php
     session_start();
+
     require("../Script_PHP/function_general.php");
     require("../Script_PHP/function_bdd.php");
 

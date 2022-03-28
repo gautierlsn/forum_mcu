@@ -1,11 +1,17 @@
 <?php
     session_start();
-    require("../Script_PHP/function_general.php");
-    require("../Script_PHP/function_bdd.php");
-    makeHead("../CSS/stylesheet.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
-    nav("forum.php","profile.php","../web_page_admin/admin.php","#","dessert.php","../web_page_admin/admin.php","commande.php","profile.php");
+
+    require("../generic/function_general.php");
+    require("../generic/function_bdd.php");
+    require("../generic/function_form.php");
+
+    makeHead("../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
+    nav("forum.php","profile.php","../web_page_admin/admin.php","#");
+
     verifLogin();
+
     $nameError = $prenomError = $adresseError = $loginError = $mdpError = "";
+
     if(!empty($_POST)){
         $nom = checkInput($_POST['nom']);
         $prenom = checkInput($_POST['prenom']);
@@ -39,6 +45,9 @@
             header("Location: profile.php");
         }
     }
+
+    $user = getUserInfo();
+
     //Formulaire pour modifier les informations du profil
-    updateProfileForm($nameError,$prenomError,$adresseError,$loginError,$mdpError);
+    updateProfileForm($user, $nameError,$prenomError,$adresseError,$loginError,$mdpError);
 ?>

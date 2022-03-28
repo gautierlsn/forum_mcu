@@ -1,26 +1,5 @@
 <?php
 
-//Création du Head
-function makeHead($css,$jquery,$scriptjs){
-    echo'
-<!DOCTYPE html>
-<html lang = "fr">
-<head>
-    <title>Forum MCU</title >
-    <meta charset = "UTF-8" >
-    <meta name ="viewport" content = "user-scalable=0, width=device-width, maximum-scale=1.0, initial-scale=1.0">
-    <link rel="stylesheet" href="'.$css.'">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-    <script src ="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity ="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin ="anonymous"></script>
-    <script src="'.$jquery.'"></script>
-    <script src="'.$scriptjs.'"></script>
-</head>
-<header id="home">
-</header>
-';
-}
-
 //Formulaire de login
 function login_form($msg_error){
 echo '
@@ -141,60 +120,130 @@ function register_form($msg_error){
         </body>
     </html>
     ';
-    }
-
-//Création de la navbar
-function nav($urlForum,$urlProfil,$urlAdmin,$active){
-if ($_SESSION['admin'] != 1){
-    $urlAdmin = "";
-}
-echo '
-<body>
-    <nav class="topnav">
-        <a href="../web_page/forum.php"> <img src="../images/bouclier.png" class="image logo-circle"> </a>
-        <label for="btn" class="icon">
-            <span class="fa fa-bars"></span>
-        </label>
-        <input type="checkbox" id="btn">
-        <ul class="text-center">
-            <li><a class="'.($active == $urlForum ? "active" : "").'" href="'.$urlForum.'">Forum</a></li>
-            <li><a class="'.($active == $urlProfil ? "active" : "").'" href="'.$urlProfil.'">Profil</a></li>';
-            if(!empty($urlAdmin)) {
-                echo'<li><a class="'.($active == $urlAdmin ? "active" : "").'" href="'.$urlAdmin.'">Admin</a ></li>';
-            }
-             echo'
-            <li><a href="../Script_PHP/logout.php">Déconnexion</a></li>
-        </ul>
-    </nav>
-';
 }
 
-function areYouSureToDelete($id){
-echo'
+
+//Formulaire pour modifier les informations du profil
+function createDiscussionForm($id){
+    echo '
+        <div class="mini_separator_white"></div>
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center mx-auto font50">Créer votre discussion</h1><hr>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <form class="form" action="../Script_PHP/do_add.php?action=addDiscussion&id='.$id.'" role="form" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="contenu" class="form-label" >Contenu :</label>
+                            <input type="text" class="form-control" id="contenu" name="contenu">
+                        </div>
+                        <div class="row">
+                            <div class="form-actions mx-auto mt-3">
+                                <a class="btn btn-primary" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left"></i></a>
+                                <button type="submit" class="btn btn-primary">Créer <i class="fas fa-check"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </body>
+    </html>
+    ';
+}
+
+//Affichage des informations du profil
+function showInfoProfile($id){
+    $db = Database::connect();
+    $statement = $db->prepare("SELECT nom, prenom, dateNaiss, email FROM utilisateur where id_utilisateur = ?");
+    $statement->execute(array($id));
+    $item = $statement->fetch();
+    $mdp = "******";
+    Database::disconnect();
+
+    echo '
     <div class="mini_separator_white"></div>
     <div class="container">
         <div class="row">
-            <h1 class="mx-auto text-center"><strong>Etes vous sur de vouloir supprimer ?</strong></h1>
+            <h1 class="mx-auto text-center"><strong><i class="fas fa-angle-left"></i> Profil <i class="fas fa-angle-right"></i></strong></h1>
         </div>
-        <div class="row">
-            <form class="form mx-auto mt-3" action="delete.php" role="form" method="post">
-                <input type="hidden" name="id" value="'.$id.'"/>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">Oui</button>
-                    <a class="btn btn-default" href="admin.php">Non</a>
-                </div>
-            </form>
+        <div>
+            <div>
+                <ul class="list-group-item-ul text-center">
+                    <li class="list-group-item list-group-item-secondary" aria-current="true">Vos informations :</li>
+                    <li class="list-group-item">Nom : '.$item['nom'].'</li>
+                    <li class="list-group-item">Prénom : '.$item['prenom'].'</li>
+                    <li class="list-group-item">Date de naissance : '.$item['dateNaiss'].'</li>
+                    <li class="list-group-item">Email : '.$item['email'].'</li>
+                    <li class="list-group-item">Mot de passe : '.$mdp.'</li>
+                </ul>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+        <div class="row mt-5">
+            <a href="update_profile.php" class="btn btn-primary btn-lg text-center mx-auto">Modifier <i class="fas fa-user-edit"></i></i></a>
         </div>
     </div>
 </body>
 </html>
-';
+    ';
 }
 
-function checkInput($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    return htmlspecialchars($data);
+//Formulaire pour modifier les informations du profil
+function updateProfileForm($user,$nameError,$prenomError,$adresseError,$loginError,$mdpError){
+    $mdp = "******";
+
+    echo '
+        <div class="mini_separator_white"></div>
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center mx-auto font50">Modifier votre profil</h1><hr>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <form class="form" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="nom" class="form-label" >Nom :</label>
+                            <input type="text" class="form-control" id="nom" name="nom" value="'.$user['nom'].'">
+                            <span class="help-inline">'.$nameError.'</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="prenom" class="form-label">Prénom :</label>
+                            <input type="text" class="form-control" id="prenom" name="prenom" value="'.$user['prenom'].'">
+                            <span class="help-inline">'.$prenomError.'</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adresse" class="form-label">Email :</label>
+                            <input type="text" class="form-control" id="adresse" name="dateNaiss" value="'.$user['dateNaiss'].'">
+                            <span class="help-inline">'.$adresseError.'</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="login" class="form-label">Login :</label>
+                            <input type="text" class="form-control" id="login" name="email" value="'.$user['email'].'">
+                            <span class="help-inline">'.$loginError.'</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe :</label>
+                            <input type="password" class="form-control" id="password" name="mdp" value="'.$mdp.'">
+                            <span class="help-inline">'.$mdpError.'</span>
+                        </div>
+                        <div class="row">
+                            <div class="form-actions mx-auto mt-3">
+                                <button type="submit" class="btn btn-primary">Modifier</button>
+                                <a class="btn btn-primary" href="profile.php">Retour <i class="fas fa-arrow-alt-circle-left"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </body>
+    </html>
+    ';
 }
 ?>
 

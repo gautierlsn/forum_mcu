@@ -1,11 +1,13 @@
 <?php
     session_start();
-    require ('Script_PHP/function_general.php');
-    require ('Script_PHP/function_bdd.php');
 
-    makeHead("CSS/stylesheet.css","CSS/stylesheet.css","JS/jquery.js","JS/script.js");
+    require ('generic/function_general.php');
+    require ('generic/function_bdd.php');
+    require ('generic/function_form.php');
 
-    //Gestion du message d'erreur d'authentification
+    makeHead("css/stylesheet.css","js/jquery.js", "js/script.js");
+
+    //Gestion du message d'erreur d'authentification si login ou mot de passe invalide
     if(isset($_SESSION['errorLogin'])){
         $msg_error = "Erreur : Identifiants / Mot de passe invalide";
         unset($_SESSION['errorLogin']);
