@@ -41,7 +41,7 @@ echo '
                 echo'<li><a class="'.($active == $urlAdmin ? "active" : "").'" href="'.$urlAdmin.'">Admin</a ></li>';
             }
              echo'
-            <li><a href="../Script_PHP/logout.php">Déconnexion</a></li>
+            <li><a href="../script/do_logout.php">Déconnexion</a></li>
         </ul>
     </nav>
 ';
