@@ -1,11 +1,8 @@
 <?php
     session_start();
 
-    require("../Script_PHP/function_general.php");
-    require("../Script_PHP/function_bdd.php");
-
-    echo $_POST['login'];
-    echo $_POST['motdepasse'];
+    require("../generic/function_general.php");
+    require("../generic/function_bdd.php");
 
     //Test pour savoir si les identifiants correspondent à la Bdd
     if ($exist = connexion($_POST['login'], $_POST['motdepasse'])){

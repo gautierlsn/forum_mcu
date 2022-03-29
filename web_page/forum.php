@@ -1,10 +1,15 @@
 <?php
     session_start();
-    require("../Script_PHP/function_general.php");
-    require("../Script_PHP/function_bdd.php");
-    makeHead("../CSS/stylesheet.css","../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
-    nav("#","profile.php","../web_page_admin/admin.php","#");
+
+    require("../generic/function_general.php");
+    require("../generic/function_bdd.php");
+    require("../generic/function_form.php");
+
+    makeHead("../css/stylesheet.css","../js/jquery.js","../JS/script.js");
+    nav("#","profile.php","admin.php","#");
+
     verifLogin();
+
     $topics = getAllTopics();
 ?>
 

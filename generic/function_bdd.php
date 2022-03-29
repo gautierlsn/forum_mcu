@@ -98,6 +98,7 @@ function getAllTopics(){
         WHERE D.id_utilisateur = U.id_utilisateur
         ');
     $all = $request_get_topics->fetchAll();
+    Database::disconnect();
     return $all;
 }
 
@@ -152,6 +153,7 @@ function getAllCommentsByTopics($IdTopics){
         ORDER BY date_creation_message DESC');
     $request_get_comments->execute(array($IdTopics));
     $all = $request_get_comments->fetchAll();
+    Database::disconnect();
     return $all;
 }
 

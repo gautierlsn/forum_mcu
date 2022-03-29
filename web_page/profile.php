@@ -5,8 +5,8 @@
     require("../generic/function_bdd.php");
     require("../generic/function_form.php");
 
-    makeHead("../CSS/stylesheet.css","../JS/jquery.js","../JS/script.js");
-    nav("forum.php","#","../web_page_admin/admin.php","#");
+    makeHead("../css/stylesheet.css","../js/jquery.js","../js/script.js");
+    nav("forum.php","#","admin.php","#");
 
     verifLogin();
 

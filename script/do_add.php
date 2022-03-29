@@ -1,26 +1,28 @@
 <?php
     session_start();
-    require("../Script_PHP/function_general.php");
-    require("../Script_PHP/function_bdd.php");
+
+    require("../generic/function_general.php");
+    require("../generic/function_bdd.php");
 
     $action = $_GET['action'];
-    $contenu = $_POST['contenu'];
-    $id = $_GET['id'];
-
-    echo $action;
-    echo $contenu;
-    echo $id;
-
-    echo date("Y-m-d");
 
     if($action == "addDiscussion"){
+        $contenu = $_POST['contenu'];
+        $id = $_GET['id'];
+
         doAddDiscussion($contenu,$id);
+
         header("location: ../web_page/forum.php");
     }
 
-    /*if($action == "deleteMessage"){
-        doDeleteMessage($idMessage);
-        header("location: ../web_page/view_discussion.php?idTopic=$idTopic");
-    }*/
-    
+    if($action == "addComment"){
+        $id_discussion = $_POST['idTopic'];
+        $contenu = $_POST['contenu'];
+        $date_creation_message = date("Y-m-d");
+        $id_utilisateur = $_SESSION['id'];
+
+        doAddComment($id_discussion,$contenu,$date_creation_message,$id_utilisateur);
+
+        header("location: ../web_page/view_discussion.php?idTopic=2");
+    }
 ?>
