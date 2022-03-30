@@ -6,7 +6,7 @@
     require("../generic/function_form.php");
 
     makeHead("../css/stylesheet.css","../js/jquery.js","../js/script.js");
-    nav("forum.php","#","admin.php","#");
+    nav("forum.php","profile.php","admin.php","#");
 
     verifLogin();
     
