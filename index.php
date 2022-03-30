@@ -7,7 +7,6 @@
 
     makeHead("css/stylesheet.css","js/jquery.js", "js/script.js");
 
-    //Gestion du message d'erreur d'authentification si login ou mot de passe invalide
     if(isset($_SESSION['errorLogin'])){
         $msg_error = "Erreur : Identifiants / Mot de passe invalide";
         unset($_SESSION['errorLogin']);

@@ -12,7 +12,7 @@
 
     $idTopic = $_GET['idTopic'];
     $topic = getOneTopic($idTopic);
-    $comments = getAllCommentsByTopics($idTopic);
+    $comments = getAllCommentsByDiscussion($idTopic);
 
     viewDiscussion($idTopic, $topic, $comments);
 

@@ -7,7 +7,6 @@
 
     makeHead("../css/stylesheet.css","../js/jquery.js","../js/script.js");
 
-    //Gestion du message d'erreur d'authentification
     if(isset($_SESSION['errorEmail'])){
         $msg_error = "Cet email est déjà utilisé !";
         unset($_SESSION['errorEmail']);

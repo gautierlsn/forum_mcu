@@ -181,6 +181,10 @@ div.card img {
     color: red;
 }
 
+.bold{
+    font-weight: bold;
+}
+
 a .btn .btn-primary .block {
     margin-top: 10px;
 }
@@ -757,6 +761,7 @@ hr {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
+    text-decoration: none;
 }
 
 .btn-lg {

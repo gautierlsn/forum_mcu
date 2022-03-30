@@ -22,7 +22,7 @@
         $idMessage = $_GET['idMessage'];
 
         //Suppression d'un commentaire
-        doDeleteMessage($idMessage);
+        doDeleteComment($idMessage);
 
         header("location: ../web_page/view_discussion.php?idTopic=$idTopic");
     }
