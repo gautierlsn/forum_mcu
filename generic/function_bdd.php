@@ -24,11 +24,27 @@ function connexion($email,$mdp){
 }
 
 //Inscription de l'utilisateur
-function inscription($nom, $prenom, $dateNaiss, $email, $motdepasse){
+function checkEmail($email){
     $db = Database::connect();
-    $statement = $db->prepare("INSERT INTO utilisateur (nom,prenom,dateNaiss,email,mdp,role) values(?, ?, ?, ?, ?, ?)");
-    $statement->execute(array($nom, $prenom, $dateNaiss, $email, $motdepasse, 0));
+    $statement = $db->prepare("SELECT count(*) as nb FROM utilisateur WHERE email=?");
+    $statement->execute(array($email));
+    $results = $statement->fetch();
     Database::disconnect();
+    return $results['nb'];
+}
+
+//Inscription de l'utilisateur
+function inscription($nom, $prenom, $dateNaiss, $email, $motdepasse){
+    if(checkEmail($email) == 1){
+        return false;
+    }
+    else{
+        $db = Database::connect();
+        $statementt = $db->prepare("INSERT INTO utilisateur (nom,prenom,dateNaiss,email,mdp,role) values(?, ?, ?, ?, ?, ?)");
+        $statementt->execute(array($nom, $prenom, $dateNaiss, $email, $motdepasse, 0));
+        Database::disconnect();
+        return true;
+    }
 }
 
 //Session de l'utilisateur

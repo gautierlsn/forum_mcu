@@ -37,7 +37,7 @@
                                         </div>
                                         <div class="col-md-12 text-center mt-3">
                                             <button type="submit" class="btn btn-primary btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
-                                            <p class="red">'.$msg_error.'</p>
+                                            <p class="red bold">'.$msg_error.'</p>
                                         </div>
                                     </form>
                                     <!-- ./Formulaire de Login -->
@@ -107,7 +107,7 @@
                                             </div>
                                             <div class="col-md-12 text-center mt-3">
                                                 <button type="submit" class="btn btn-primary btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
-                                                <p class="red">'.$msg_error.'</p>
+                                                <p class="red bold">'.$msg_error.'</p>
                                             </div>
                                         </form>
                                         <!-- ./Formulaire de Login -->

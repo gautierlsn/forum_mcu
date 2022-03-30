@@ -18,7 +18,9 @@
         $dateNaiss = checkInput($_POST['dateNaiss']);
         $email = checkInput($_POST['email']);
         $mdp = checkInput($_POST['mdp']);
+
         $isSuccess = true;
+
         if(empty($nom)){
             $nameError = 'Ce champ ne peut pas être vide';
             $isSuccess = false;
@@ -39,6 +41,7 @@
             $mdpError = 'Ce champ ne peut pas être vide';
             $isSuccess = false;
         }
+
         if($isSuccess){
             //Modification du profil
             doUpdateProfile($nom,$prenom,$dateNaiss,$email,$mdp,$_SESSION['id']);
