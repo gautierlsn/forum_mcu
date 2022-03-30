@@ -142,8 +142,8 @@
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto mt-3">
-                                    <a class="btn btn-primary" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left"></i></a>
-                                    <button type="submit" class="btn btn-primary">Créer <i class="fas fa-check"></i></button>
+                                    <a class="btn btn-warning" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left"></i></a>
+                                    <button type="submit" class="btn btn-success">Créer <i class="fas fa-check"></i></button>
                                 </div>
                             </div>
                         </form>

@@ -16,13 +16,13 @@
     }
 
     if($action == "addComment"){
-        $id_discussion = $_POST['idTopic'];
+        $id_discussion = $_POST['idDiscussion'];
         $contenu = $_POST['contenu'];
-        $date_creation_message = date("Y-m-d");
+        $date_creation_comment = date("Y-m-d");
         $id_utilisateur = $_SESSION['id'];
 
-        doAddComment($id_discussion,$contenu,$date_creation_message,$id_utilisateur);
+        doAddComment($id_discussion,$contenu,$date_creation_comment,$id_utilisateur);
 
-        header("location: ../web_page/view_discussion.php?idTopic=2");
+        header("location: ../web_page/view_discussion.php?idDiscussion=$id_discussion");
     }
 ?>

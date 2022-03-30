@@ -10,28 +10,29 @@
     $action = $_GET['action'];
 
     if($action == "deleteDiscussion"){
-        $idTopic = $_GET['idTopic'];
+        $idDiscussion = $_GET['idDiscussion'];
 
         //Suppression d'une discussion
-        doDeleteDiscussion($idTopic);
+        doDeleteDiscussion($idDiscussion);
 
         header("location: ../web_page/forum.php");
     }
 
-    if($action == "deleteMessage"){
-        $idMessage = $_GET['idMessage'];
+    if($action == "deleteComment"){
+        $idComment = $_GET['idComment'];
+        $idDiscussion = $_GET['idDiscussion'];
 
         //Suppression d'un commentaire
-        doDeleteComment($idMessage);
+        doDeleteComment($idComment);
 
-        header("location: ../web_page/view_discussion.php?idTopic=$idTopic");
+        header("location: ../web_page/view_discussion.php?idDiscussion=$idDiscussion");
     }
 
     if($action == "deleteUser"){
         $id = checkInput($_GET['id']);
 
         //Suppression d'un utilisateur
-        doDeleteUtilisateur($id);
+        doDeleteUser($id);
 
         header("location: ../web_page/admin.php");
     }

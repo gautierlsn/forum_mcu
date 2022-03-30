@@ -11,9 +11,9 @@
 
     verifLogin();
 
-    $topics = getAllDiscussion();
+    $discussions = getAllDiscussion();
 
-    viewForum($topics);
+    viewForum($discussions);
 ?>
 
 

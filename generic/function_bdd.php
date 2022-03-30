@@ -68,7 +68,7 @@
     }
 
     //Suppression d'un utilisateur
-    function doDeleteUtilisateur($id){
+    function doDeleteUser($id){
         $db = Database::connect();
         $statement = $db->prepare("DELETE FROM utilisateur WHERE id_utilisateur = ?");
         $statement->execute(array($id));
@@ -120,7 +120,7 @@
     }
 
     //Récupérer une discussion
-    function getOneTopic($idTopic){
+    function getOneDiscussion($idDiscussion){
         $db = Database::connect();
         $statement = $db->prepare(
             'SELECT id_discussion, titre, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%i\') AS date_creation_fr, D.id_utilisateur, U.nom, U.prenom
@@ -129,7 +129,7 @@
             AND id_discussion = ?;
             ');
 
-        $statement->execute(array($idTopic));
+        $statement->execute(array($idDiscussion));
         $results = $statement->fetch();
         Database::disconnect();
         return $results;
@@ -159,7 +159,7 @@
     //Partie commentaire
 
     //Récupérer tous les commentaires d'une discussion
-    function getAllCommentsByDiscussion($IdTopics){
+    function getAllCommentsByDiscussion($idDiscussion){
         $db = Database::connect();
         $request_get_comments = $db->prepare(
             'SELECT id_comment, contenu, date_creation_comment, id_discussion, M.id_utilisateur, U.nom, U.prenom
@@ -167,7 +167,7 @@
             WHERE M.id_utilisateur = U.id_utilisateur
             AND id_discussion = ? 
             ORDER BY date_creation_comment DESC');
-        $request_get_comments->execute(array($IdTopics));
+        $request_get_comments->execute(array($idDiscussion));
         $all = $request_get_comments->fetchAll();
         Database::disconnect();
         return $all;

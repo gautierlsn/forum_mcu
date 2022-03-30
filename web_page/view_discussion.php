@@ -10,11 +10,11 @@
 
     verifLogin();
 
-    $idTopic = $_GET['idTopic'];
-    $topic = getOneTopic($idTopic);
-    $comments = getAllCommentsByDiscussion($idTopic);
+    $idDiscussion = $_GET['idDiscussion'];
+    $discussion = getOneDiscussion($idDiscussion);
+    $comments = getAllCommentsByDiscussion($idDiscussion);
 
-    viewDiscussion($idTopic, $topic, $comments);
+    viewDiscussion($idDiscussion, $discussion, $comments);
 
     require("../js/CKeditor.php");
 ?>

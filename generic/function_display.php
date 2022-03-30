@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <a href="update_profile.php" class="btn btn-primary btn-lg text-center mx-auto">Modifier <i class="fas fa-user-edit"></i></i></a>
+                <a href="update_profile.php" class="btn btn-warning btn-lg text-center mx-auto">Modifier <i class="fas fa-user-edit"></i></i></a>
             </div>
         </div>
     </body>
@@ -38,15 +38,15 @@
     }
 
     //Section pour rédiger un commentaire
-    function postComments($idTopic){
+    function postComments($idDiscussion){
         echo '
                 <div class="header pb-4 comment_tilte text-center" style="padding-top: 5%;">
                     <h2>Poster un commentaire</h2>
                 </div>
                 <div class="container">
                     <div class="align-items-center">
-                        <form action="../script/do_add.php" method="POST">
-                            <input type="hidden" value="'.$idTopic.'" name="idTopic">
+                        <form action="../script/do_add.php?action=addComment" method="POST">
+                            <input type="hidden" value="'.$idDiscussion.'" name="idDiscussion">
                             <textarea name="contenu" required id="editor1" class="form-control"></textarea>
                             <div class="mx-auto text-center" style="padding-top: 1%">
                                 <input type="submit" name="submit" class="btn btn-primary" value="Send Request">
@@ -58,27 +58,27 @@
     }
 
     //Section pour voir une discussion
-    function viewDiscussion($idTopic, $topic, $comments){
+    function viewDiscussion($idDiscussion, $discussion, $comments){
         echo '
                 <div class="container mt-5">
 
                         <div class="card">
                 
                             <div class="card-body">
-                                <h5 class="card-title" style="font-size: 35px; text-align: center;">'.$topic['titre'].'</h5>
+                                <h5 class="card-title" style="font-size: 35px; text-align: center;">'.$discussion['titre'].'</h5>
                 </div>
                 
                 <div class="modal-footer">
-                    <p style="font-weight: bold">Discussion créée par : </p> <p>'.$topic['nom'].' '.$topic['prenom'].'</p>
+                    <p style="font-weight: bold">Discussion créée par : </p> <p>'.$discussion['nom'].' '.$discussion['prenom'].'</p>
                     <br/>
-                    <p style="font-weight: bold"> Date de création : <p/> <p>'.$topic['date_creation_fr'].'</p>
+                    <p style="font-weight: bold"> Date de création : <p/> <p>'.$discussion['date_creation_fr'].'</p>
                 </div>
 
                 </div>
                 
                 <div class="comments_article">
                     <div class="container show_article_container">';
-                    postComments($idTopic);
+                    postComments($idDiscussion);
         echo '
                     </div>
                 </div>
@@ -94,13 +94,13 @@
                     <hr>
                     <p>'.$Onecomment['contenu'].'</p>
                     <hr>
-                    <p style="font-weight: bold">Posté le :</p> <p class="date_topic">'.$newDate.'</p>
+                    <p style="font-weight: bold">Posté le :</p> <p class="date_discussion">'.$newDate.'</p>
             ';
                 
                     if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1){
         echo '
-                        <a href="../script/do_delete.php?action=deleteMessage&idMessage='.$Onecomment['id_message'].'&idTopic='.$idTopic.'">
-                            <button class="btn btn-danger btn_show_topic"><i class="fas fa-trash-alt"></i></button>
+                        <a href="../script/do_delete.php?action=deleteComment&idComment='.$Onecomment['id_comment'].'&idDiscussion='.$idDiscussion.'">
+                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                         </a>
             ';
                     }
@@ -114,7 +114,7 @@
         ';
     }
 
-    function viewForum($topics){
+    function viewForum($discussions){
         echo '
             <div class="container">
                 <div class="row mx-auto text-center mt-5">
@@ -122,32 +122,32 @@
                 </div>
         
                 <div class="row mt-5">
-                    <a href="create_discussion.php" class="btn btn-success text-center mx-auto">Créer une discussion <i class="fas fa-plus-circle"></i></a>
+                    <a href="../web_page/create_discussion.php" class="btn btn-success text-center mx-auto">Créer une discussion <i class="fas fa-plus-circle"></i></a>
                 </div>
         
                 <div class="row mt-5">
         ';
-                        foreach($topics as $topic){
-                            $date = $topic['date_creation'];
+                        foreach($discussions as $discussion){
+                            $date = $discussion['date_creation'];
                             $timestamp = strtotime($date);
-                            $newDate = date('d M Y à H:i', $timestamp);
+                            $newDate = date('d M Y', $timestamp);
         echo '
                         <div class="col-md-12 text-center pb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">'.$topic['titre'].'</h5><hr>
-                                    <p>Auteur : '.$topic['nom'].' '.$topic['prenom'].'</p>
-                                    <p>La date de création : '.$newDate.'</p>
+                                    <h5 class="card-title">'.$discussion['titre'].'</h5><hr>
+                                    <p>Auteur : '.$discussion['nom'].' '.$discussion['prenom'].'</p>
+                                    <p>Date de création : '.$newDate.'</p>
         ';
                                     if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1){
         echo '      
-                                        <a href="view_discussion.php?idTopic='.$topic['id_discussion'].'" class="btn btn-warning" ><i class="fas fa-eye"></i></a>
-                                        <a href="../Script_PHP/do_delete.php?action=deleteDiscussion&idTopic='.$topic['id_discussion'].'" class="btn btn-danger btn_home_forum" ><i class="fas fa-trash-alt"></i></a>
+                                        <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="btn btn-warning" ><i class="fas fa-eye"></i></a>
+                                        <a href="../script/do_delete.php?action=deleteDiscussion&idDiscussion='.$discussion['id_discussion'].'" class="btn btn-danger btn_home_forum" ><i class="fas fa-trash-alt"></i></a>
         ';
                                     }
                                     else{
         echo ' 
-                                        <a href="view_discussion.php?idTopic='.$topic['id_discussion'].'" class="btn btn-warning">Voir <i class="fas fa-eye"></i></a>
+                                        <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="btn btn-warning">Voir <i class="fas fa-eye"></i></a>
         ';
                                     }
         echo ' 
