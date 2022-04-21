@@ -191,7 +191,7 @@
                             <td>'. $user['dateNaiss'].'</td>
                             <td>'. $user['email'] . '</td>
                             <td class="width300">
-                                <a class="btn btn-danger" href="../Script_PHP/do_delete_user.php?id='.$user['id_utilisateur'].'">  Supprimer <br/> <i class="fas fa-trash"></i></a>
+                                <a class="btn btn-danger" href="../Script_PHP/do_delete_user.php?id='.$user['id_utilisateur'].'"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     ';

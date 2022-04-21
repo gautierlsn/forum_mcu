@@ -1,7 +1,8 @@
 <?php
 
-    //Formulaire de login
-    function login_form($msg_error){
+//Formulaire de login
+function login_form($msg_error)
+{
     echo '
         <body class="bg">
             <main class="login-form h-100">
@@ -18,18 +19,19 @@
                                     </div>
                                 </div> 
                                 <div class="card-body overflow-hidden">
+                                
                                     <!-- Formulaire de Login -->
                                     <form name="selectForm" id="login" data-type="login-form" action="script/do_login.php" method="POST">
                                         <div class="form-group row">
                                             <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
-                                                <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="login" required>
+                                                <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="login">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
                                             <div class="col-md-6">
-                                                <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse" required>
+                                                <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse">
                                             </div>
                                         </div>
                                         <div class="col-md-12 text-center mt-3">
@@ -37,7 +39,7 @@
                                         </div>
                                         <div class="col-md-12 text-center mt-3">
                                             <button type="submit" class="btn btn-primary btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
-                                            <p class="red bold">'.$msg_error.'</p>
+                                            <p class="red bold">' . $msg_error . '</p>
                                         </div>
                                     </form>
                                     <!-- ./Formulaire de Login -->
@@ -50,11 +52,12 @@
         </body>
     </html>
     ';
-    }
+}
 
-    //Formulaire d'inscription
-    function register_form($msg_error){
-        echo '
+//Formulaire d'inscription
+function register_form($msg_error)
+{
+    echo '
             <body class="bg">
                 <main class="register-form h-100">
                     <div class="container h-100">
@@ -71,17 +74,18 @@
                                     </div> 
                                     <div class="card-body overflow-hidden">
                                         <!-- Formulaire de Login -->
-                                        <form name="selectForm" id="login" data-type="login-form" action="../script/do_inscription.php" method="POST">
+                                        <script src=".$scriptjs."></script>
+                                        <form name="selectForm" id="login" data-type="login-form" action="../script/do_inscription.php" method="POST" onsubmit="return validateInscription()">
                                             <div class="form-group row">
                                                 <label for="nom" class="col-md-4 col-form-label text-md-center text-nowrap">Nom <i class="fas fa-user"></i></label>
                                                 <div class="col-md-6">
-                                                    <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom" required>
+                                                    <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="prenom" class="col-md-4 col-form-label text-md-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
                                                 <div class="col-md-6">
-                                                    <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom" required>
+                                                    <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -93,13 +97,13 @@
                                             <div class="form-group row">
                                                 <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
                                                 <div class="col-md-6">
-                                                    <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="email" required>
+                                                    <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="email">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
                                                 <div class="col-md-6">
-                                                    <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse" required>
+                                                    <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse">
                                                 </div>
                                             </div>
                                             <div class="col-md-12 text-center mt-3">
@@ -107,7 +111,7 @@
                                             </div>
                                             <div class="col-md-12 text-center mt-3">
                                                 <button type="submit" class="btn btn-primary btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
-                                                <p class="red bold">'.$msg_error.'</p>
+                                                <p class="red bold">' . $msg_error . '</p>
                                             </div>
                                         </form>
                                         <!-- ./Formulaire de Login -->
@@ -120,12 +124,13 @@
             </body>
         </html>
         ';
-    }
+}
 
 
-    //Formulaire pour modifier les informations du profil
-    function createDiscussionForm($id){
-        echo '
+//Formulaire pour modifier les informations du profil
+function createDiscussionForm($id)
+{
+    echo '
             <div class="mini_separator_white"></div>
             <div class="container">
                 <div class="row">
@@ -135,7 +140,7 @@
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-8">
-                        <form class="form" action="../script/do_add.php?action=addDiscussion&id='.$id.'" role="form" method="post" enctype="multipart/form-data">
+                        <form class="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="contenu" class="form-label" >Contenu :</label>
                                 <input type="text" class="form-control" id="contenu" name="contenu">
@@ -152,13 +157,14 @@
         </body>
         </html>
         ';
-    }
+}
 
-    //Formulaire pour modifier les informations du profil
-    function updateProfileForm($user,$nameError,$prenomError,$adresseError,$loginError,$mdpError){
-        $mdp = "******";
+//Formulaire pour modifier les informations du profil
+function updateProfileForm($user, $nameError, $prenomError, $adresseError, $loginError, $mdpError)
+{
+    $mdp = "******";
 
-        echo '
+    echo '
             <div class="mini_separator_white"></div>
             <div class="container">
                 <div class="row">
@@ -171,28 +177,28 @@
                         <form class="form" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="nom" class="form-label" >Nom :</label>
-                                <input type="text" class="form-control" id="nom" name="nom" value="'.$user['nom'].'">
-                                <span class="help-inline">'.$nameError.'</span>
+                                <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '">
+                                <span class="help-inline">' . $nameError . '</span>
                             </div>
                             <div class="mb-3">
                                 <label for="prenom" class="form-label">Prénom :</label>
-                                <input type="text" class="form-control" id="prenom" name="prenom" value="'.$user['prenom'].'">
-                                <span class="help-inline">'.$prenomError.'</span>
+                                <input type="text" class="form-control" id="prenom" name="prenom" value="' . $user['prenom'] . '">
+                                <span class="help-inline">' . $prenomError . '</span>
                             </div>
                             <div class="mb-3">
                                 <label for="adresse" class="form-label">Email :</label>
-                                <input type="text" class="form-control" id="adresse" name="dateNaiss" value="'.$user['dateNaiss'].'">
-                                <span class="help-inline">'.$adresseError.'</span>
+                                <input type="text" class="form-control" id="adresse" name="dateNaiss" value="' . $user['dateNaiss'] . '">
+                                <span class="help-inline">' . $adresseError . '</span>
                             </div>
                             <div class="mb-3">
                                 <label for="login" class="form-label">Login :</label>
-                                <input type="text" class="form-control" id="login" name="email" value="'.$user['email'].'">
-                                <span class="help-inline">'.$loginError.'</span>
+                                <input type="text" class="form-control" id="login" name="email" value="' . $user['email'] . '">
+                                <span class="help-inline">' . $loginError . '</span>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Mot de passe :</label>
-                                <input type="password" class="form-control" id="password" name="mdp" value="'.$mdp.'">
-                                <span class="help-inline">'.$mdpError.'</span>
+                                <input type="password" class="form-control" id="password" name="mdp" value="' . $mdp . '">
+                                <span class="help-inline">' . $mdpError . '</span>
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto mt-3">
@@ -206,6 +212,7 @@
         </body>
         </html>
         ';
-    }
+}
+
 ?>
 
