@@ -122,7 +122,7 @@
                 </div>
         
                 <div class="row mt-5">
-                    <a href="../web_page/create_discussion.php" class="btn btn-success text-center mx-auto">Créer une discussion <i class="fas fa-plus-circle"></i></a>
+                    <a href="../web_page/create_discussion.php" class="btn btn-perso-green text-center mx-auto">Créer une discussion <i class="fas fa-plus-circle"></i></a>
                 </div>
         
                 <div class="row mt-5">
@@ -147,7 +147,7 @@
                                     }
                                     else{
         echo ' 
-                                        <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="btn btn-warning">Voir <i class="fas fa-eye"></i></a>
+                                        <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="btn btn-perso-blue">Voir <i class="fas fa-eye"></i></a>
         ';
                                     }
         echo ' 

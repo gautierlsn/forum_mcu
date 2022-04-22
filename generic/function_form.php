@@ -38,7 +38,7 @@ function login_form($msg_error)
                                             <a href="web_page/inscription.php">Pas encore de compte ?</a>
                                         </div>
                                         <div class="col-md-12 text-center mt-3">
-                                            <button type="submit" class="btn btn-primary btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
+                                            <button type="submit" class="btn btn-perso-blue btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
                                             <p class="red bold">' . $msg_error . '</p>
                                         </div>
                                     </form>
