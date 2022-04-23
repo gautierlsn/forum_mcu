@@ -10,6 +10,7 @@ function makeHead($css,$jquery,$scriptjs){
     <meta charset = "UTF-8" >
     <meta name ="viewport" content = "user-scalable=0, width=device-width, maximum-scale=1.0, initial-scale=1.0">
     <link rel="stylesheet" href="'.$css.'">
+    <link rel="icon" type="image/x-icon" href="../images/bouclier.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script src ="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity ="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin ="anonymous"></script>

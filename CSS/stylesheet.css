@@ -17,11 +17,13 @@ body::-webkit-scrollbar {
     width: 1em;
     border-radius: 10px;
 }
+
 body::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
     border-radius: 10px;
     background: rgba(0, 0, 0, 0);
 }
+
 body::-webkit-scrollbar-thumb {
     background-color: #0AD0A0;
     border-radius: 10px;
@@ -176,11 +178,11 @@ div.card img {
     color: red;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
-.modal-footer{
+.modal-footer {
     margin-left: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -245,12 +247,6 @@ p {
     padding-bottom: 1.5rem;
 }
 
-.my-form .row,
-.login-form .row,
-.register-form .row{
-    margin-left: 6vh;
-    margin-right: 6vh;
-}
 
 .login-form {
     margin-top: 25vh;
@@ -305,19 +301,18 @@ form[data-type="login-form"] .form-control:hover, form[data-type="register-form"
 }
 
 
-
 form[data-type="login-form"], form[data-type="register-form"] {
     font-family: "Quicksand", sans-serif;
 }
 
 form .btn > i#turn,
-a > i#turn{
+a > i#turn {
     transition: 0.55s;
     transform: rotate(0deg);
 }
 
 form .btn:hover > i#turn,
-a:hover > i#turn{
+a:hover > i#turn {
     transition: 0.55s;
     transform: rotate(360deg);
 }
@@ -415,7 +410,7 @@ form[data-type="register-form"] div button {
     text-decoration: none;
 }
 
-.btn-perso-green{
+.btn-perso-green {
     margin-top: 0;
     background-color: #0ad0a0;
 }
@@ -428,7 +423,22 @@ form[data-type="register-form"] div button {
 .btn-perso-red {
     color: #fff;
     background-color: #dc3545;
-    border-color: #dc3545
+}
+
+.btn-perso-red-admin {
+    color: red;
+}
+
+.btn-admin {
+    color: red;
+    text-align: center;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+td .btn-admin {
+    padding: 0;
 }
 
 .btn-group-lg > .btn, .btn-lg {
@@ -754,12 +764,12 @@ nav ul ul ul li {
     border-radius: 0.25rem;
 }
 
-.form-width-reduct{
+.form-width-reduct {
     margin-left: 15rem;
     margin-right: 15rem;
 }
 
-.comment-width-reduct{
+.comment-width-reduct {
     margin-left: 10rem;
     margin-right: 10rem;
 }
@@ -788,8 +798,6 @@ hr {
     height: 0;
     overflow: visible;
 }
-
-
 
 
 .navbar {
@@ -906,35 +914,61 @@ hr {
     text-align: right !important
 }
 
-.table {
-    margin-bottom: 1rem;
-    color: #212529;
-    position: absolute;
-    right: 0;
-    width: 5px;
-    cursor: col-resize;
-    user-select: none;
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
 }
 
-.table-bordered {
-    border: 1px solid #dee2e6;
-    width: 100%
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
 }
 
-.table-bordered td, .table-bordered th {
-    border: 1px solid #dee2e6
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
 }
 
-.table-bordered thead td, .table-bordered thead th {
-    border-bottom-width: 2px
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
 }
 
-.table-borderless tbody + tbody, .table-borderless td, .table-borderless th, .table-borderless thead th {
-    border: 0
+@media screen and (max-width: 600px) {
+
+    table tr {
+        margin-bottom: .625em;
+    }
+
+    table td {
+        font-size: .8em;
+    }
+
+    table td::before {
+        /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, .05)
+/* general styling */
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
 }
 
 .form-actions {

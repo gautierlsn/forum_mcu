@@ -5,40 +5,40 @@ function login_form($msg_error)
 {
     echo '
         <body class="bg">
-            <main class="login-form h-100">
-                <div class="container h-100">
-                    <div class="row h-100">
+            <main class="login-form">
+                <div class="container ">
+                    <div class="row">
                         <div class="col-md-12 my-auto">
                             <div id="blur"></div>
                             <div class="card" id="mycardlogin">
                                 <div class="card-header">
                                     <div class="row flex-nowrap">
                                         <div class="col-md-12">
-                                            <h3 class="font40 mt-1 mb-1 registerToggler text-primary" data-toggle="login">Connexion</h3>
+                                            <h3 class="mt-1 mb-1 registerToggler text-primary" data-toggle="login">Connexion</h3>
                                         </div>
                                     </div>
                                 </div> 
                                 <div class="card-body overflow-hidden">
                                 
                                     <!-- Formulaire de Login -->
-                                    <form name="selectForm" id="login" data-type="login-form" action="script/do_login.php" method="POST">
+                                    <form name="selectForm" id="login" data-type="login-form" action="script/do_login.php" method="POST" class="responsive-form">
                                         <div class="form-group row">
-                                            <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
+                                            <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap login-label">Email <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
-                                                <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="login">
+                                                <input type="text" id="email_address" placeholder="Votre email" class="form-control login-input" name="login">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
+                                            <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap login-label">Mot de passe <i class="fas fa-key"></i></label>
                                             <div class="col-md-6">
-                                                <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse">
+                                                <input type="password" id="password" placeholder="Votre mot de passe" class="form-control login-input" name="motdepasse">
                                             </div>
                                         </div>
-                                        <div class="col-md-12 text-center mt-3">
+                                        <div class="col-md-12 text-center mt-3 sign-up">
                                             <a href="web_page/inscription.php">Pas encore de compte ?</a>
                                         </div>
                                         <div class="col-md-12 text-center mt-3">
-                                            <button type="submit" class="btn btn-perso-blue btn-lg mt-2">Se connecter <i class="fas fa-sign-in-alt" id="turn"></i></button>
+                                            <button type="submit" class="btn btn-perso-blue btn-lg mt-2 login-button">Se connecter <i class="fas fa-sign-in-alt" id="turn"></i></button>
                                             <p class="red bold">' . $msg_error . '</p>
                                         </div>
                                     </form>
@@ -172,7 +172,7 @@ function updateProfileForm($user, $nameError, $prenomError, $adresseError, $logi
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12">
-                        <form class="form form-width-reduct" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
+                        <form class="form" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="nom" class="form-label" >Nom :</label>
                                 <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '">

@@ -80,7 +80,7 @@
                 foreach ($comments as $Onecomment) {
 
         echo '
-                    <div class="acomment pb-5 comment-width-reduct">
+                    <div class="acomment pb-5">
                     <p><span class="bold">Auteur : </span>'.$Onecomment['nom'].' '.$Onecomment['prenom'].'</p>
                     <p><span class="bold">Date de création : </span>'.$Onecomment['date_creation_comment_fr'].'</p>
                     <hr>
@@ -158,7 +158,7 @@
                 <div class="row mb-4">
                     <h1 class="mx-auto text-center font50"><strong><i class="fas fa-angle-left"></i> Admin <i class="fas fa-angle-right"></i></strong></h1>
                 </div>
-                <div class="row mb-4">
+                <div class="row">
                     <div class="col-md-12">
                         <table class="table table-bordered">
                             <thead class="text-center">
@@ -178,9 +178,9 @@
                                 <td>'.$user['nom'].'</td>
                                 <td>'. $user['prenom'].'</td>
                                 <td>'. $user['dateNaiss'].'</td>
-                                <td>'. $user['email'] . '</td>
-                                <td class="width300">
-                                    <a class="btn btn-perso-red" href="../script/do_delete.php?action=deleteUser&id='.$user['id_utilisateur'].'">Supprimer <i class="fas fa-trash" id="turn"></i></a>
+                                <td style="font-size: 11px">'. $user['email'] . '</td>
+                                <td>
+                                    <a class="btn-admin btn-perso-red-admin" href="../script/do_delete.php?action=deleteUser&id='.$user['id_utilisateur'].'"><i class="fas fa-trash" id="turn"></i></a>
                                 </td>
                             </tr>
                         ';
