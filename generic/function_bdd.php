@@ -49,6 +49,7 @@
         $_SESSION['admin'] = $results['role'];
         $_SESSION['nom'] = $results['nom'];
         $_SESSION['prenom'] = $results['prenom'];
+        $_SESSION['dateNaiss'] = $results['dateNaiss'];
         $_SESSION['ROLE'] = $results['role'];
         Database::disconnect();
     }
@@ -86,7 +87,7 @@
     //Récupération du profil de l'utilisateur
     function getUserInfo(){
         $db = Database::connect();
-        $statement = $db->prepare("SELECT nom, prenom, dateNaiss, email FROM utilisateur where id_utilisateur = ?");
+        $statement = $db->prepare("SELECT nom, prenom, dateNaiss, email, mdp FROM utilisateur where id_utilisateur = ?");
         $statement->execute(array($_SESSION['id']));
         $item = $statement->fetch();
         Database::disconnect();

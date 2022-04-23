@@ -38,7 +38,7 @@ function login_form($msg_error)
                                             <a href="web_page/inscription.php">Pas encore de compte ?</a>
                                         </div>
                                         <div class="col-md-12 text-center mt-3">
-                                            <button type="submit" class="btn btn-perso-blue btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
+                                            <button type="submit" class="btn btn-perso-blue btn-lg mt-2">Se connecter <i class="fas fa-sign-in-alt" id="turn"></i></button>
                                             <p class="red bold">' . $msg_error . '</p>
                                         </div>
                                     </form>
@@ -110,7 +110,7 @@ function register_form($msg_error)
                                                 <a href="../index.php">Vous possédez déjà un compte ?</a>
                                             </div>
                                             <div class="col-md-12 text-center mt-3">
-                                                <button type="submit" class="btn btn-primary btn-lg mt-2">Valider <i class="fas fa-sign-in-alt" id="turn"></i></button>
+                                                <button type="submit" class="btn btn-perso-blue btn-lg mt-2">S\'incrire <i class="fas fa-user-plus" id="turn"></i></button>
                                                 <p class="red bold">' . $msg_error . '</p>
                                             </div>
                                         </form>
@@ -131,12 +131,12 @@ function register_form($msg_error)
 function createDiscussionForm($id)
 {
     echo '
-            <div class="mini_separator_white"></div>
+            <div class="separator_white"></div>
             <div class="container">
                 <div class="row">
                     <h1 class="text-center mx-auto font50">Créer votre discussion</h1><hr>
                 </div>
-                <div class="row mt-4">
+                <div class="row mt-3">
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-8">
@@ -147,8 +147,8 @@ function createDiscussionForm($id)
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto mt-3">
-                                    <a class="btn btn-warning" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left"></i></a>
-                                    <button type="submit" class="btn btn-success">Créer <i class="fas fa-check"></i></button>
+                                    <a class="btn btn-perso-blue btn-lg" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left" id="turn"></i></a>
+                                    <button type="submit" class="btn btn-perso-green btn-lg">Créer <i class="fas fa-check" id="turn"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -165,16 +165,14 @@ function updateProfileForm($user, $nameError, $prenomError, $adresseError, $logi
     $mdp = "******";
 
     echo '
-            <div class="mini_separator_white"></div>
+            <div class="separator_white"></div>
             <div class="container">
                 <div class="row">
                     <h1 class="text-center mx-auto font50">Modifier votre profil</h1><hr>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-md-2">
-                    </div>
-                    <div class="col-md-8">
-                        <form class="form" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <form class="form form-width-reduct" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="nom" class="form-label" >Nom :</label>
                                 <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '">
@@ -186,24 +184,24 @@ function updateProfileForm($user, $nameError, $prenomError, $adresseError, $logi
                                 <span class="help-inline">' . $prenomError . '</span>
                             </div>
                             <div class="mb-3">
-                                <label for="adresse" class="form-label">Email :</label>
+                                <label for="adresse" class="form-label">Date de naissance :</label>
                                 <input type="text" class="form-control" id="adresse" name="dateNaiss" value="' . $user['dateNaiss'] . '">
                                 <span class="help-inline">' . $adresseError . '</span>
                             </div>
                             <div class="mb-3">
-                                <label for="login" class="form-label">Login :</label>
+                                <label for="login" class="form-label">Email :</label>
                                 <input type="text" class="form-control" id="login" name="email" value="' . $user['email'] . '">
                                 <span class="help-inline">' . $loginError . '</span>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Mot de passe :</label>
-                                <input type="password" class="form-control" id="password" name="mdp" value="' . $mdp . '">
+                                <input type="password" class="form-control" id="password" name="mdp" value="' . $user['mdp'] . '">
                                 <span class="help-inline">' . $mdpError . '</span>
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto mt-3">
-                                    <button type="submit" class="btn btn-primary">Modifier</button>
-                                    <a class="btn btn-primary" href="profile.php">Retour <i class="fas fa-arrow-alt-circle-left"></i></a>
+                                    <a class="btn btn-perso-blue btn-lg" href="profile.php">Retour <i class="fas fa-arrow-alt-circle-left" id="turn"></i></a>
+                                    <button type="submit" class="btn btn-perso-green btn-lg">Modifier <i class="fas fa-user-edit" id="turn"></i></button>
                                 </div>
                             </div>
                         </form>
