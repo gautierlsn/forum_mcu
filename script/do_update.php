@@ -4,6 +4,8 @@
     require("../generic/function_general.php");
     require("../generic/function_bdd.php");
 
+    verifLogin();
+
     $action = $_GET['action'];
 
     if($action == "updateProfile"){
