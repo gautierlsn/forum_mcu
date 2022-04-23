@@ -21,7 +21,7 @@ function login_form($msg_error)
                                 <div class="card-body overflow-hidden">
                                     <form name="selectForm" class="form-width-reduct" id="login" data-type="login-form" onsubmit="return ValidateSignForm(document.selectForm.login)" action="script/do_login.php" method="POST">
                                         <div class="form-group row">
-                                            <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-user"></i></label>
+                                            <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-at"></i></label>
                                             <div class="col-md-6">
                                                 <input type="email" id="email_address" placeholder="Votre email" class="form-control" name="login">
                                             </div>
@@ -74,21 +74,21 @@ function register_form($msg_error)
                                         <form name="selectForm" id="login" class="form-width-reduct" data-type="login-form" onsubmit="return validateRegisterForm()" action="../script/do_inscription.php" method="POST">
                                             <div class="form-group row">
                                                 <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
-                                                <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom">
+                                                <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom" required="required" minlength="3">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="prenom" class="col-md-4 col-form-label text-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
-                                                <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom">
+                                                <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom" required="required" minlength="3">
                                             </div>
                                             <div class="form-group row mx-auto">
                                                 <label for="dateNaiss" class="col-md-4 col-form-label text-center text-nowrap">Date de naissance <i class="fas fa-birthday-cake"></i></label>
                                                 <div class="col-md-6 text-center">
-                                                    <input type="date" id="dateNaiss" name="dateNaiss">
+                                                    <input type="date" id="dateNaiss" name="dateNaiss" required="required">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-at"></i></label>
-                                                <input type="email" id="email_address" placeholder="Votre email" class="form-control" name="email">
+                                                <input type="email" id="email_address" placeholder="Votre email" class="form-control" name="email" required="required" minlength="7">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="password" class="col-md-4 col-form-label text-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
@@ -130,7 +130,7 @@ function createDiscussionForm($id)
                         <form class="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="contenu" class="form-label" >Contenu :</label>
-                                <input type="text" class="form-control" id="contenu" name="contenu">
+                                <input type="text" class="form-control" id="contenu" name="contenu" required="required" minlength="">
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto mt-3">
@@ -162,25 +162,25 @@ function updateProfileForm($user)
                         <form class="form form-width-reduct" action="../script/do_update.php?action=updateProfile" role="form" method="post" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
-                                <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '">
+                                <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '" required="required" minlength="6">
                             </div>
                             <div class="form-group row">
                                 <label for="prenom" class="col-md-4 col-form-label text-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
-                                <input type="text" class="form-control" id="prenom" name="prenom" value="' . $user['prenom'] . '">
+                                <input type="text" class="form-control" id="prenom" name="prenom" value="' . $user['prenom'] . '" required="required" minlength="6">
                             </div>
                             <div class="form-group row">
                                 <label for="dateNaiss" class="col-md-4 col-form-label text-center text-nowrap">Date de naissance <i class="fas fa-birthday-cake"></i></label>
                                 <div class="col-md-6 text-center">
-                                    <input type="date" id="dateNaiss" name="dateNaiss" value="' . $user['dateNaiss'] . '">
+                                    <input type="date" id="dateNaiss" name="dateNaiss" value="' . $user['dateNaiss'] . '" required="required">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-at"></i></label>
-                                <input type="email" class="form-control" id="email" name="email" value="' . $user['email'] . '">
+                                <input type="email" class="form-control" id="email" name="email" value="' . $user['email'] . '" required="required" minlength="6">
                             </div>
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
-                                <input type="password" class="form-control" id="password" name="mdp" value="' . $user['mdp'] . '">
+                                <input type="password" class="form-control" id="password" name="mdp" value="' . $user['mdp'] . '" required="required" minlength="6">
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto">

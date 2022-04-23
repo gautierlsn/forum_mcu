@@ -60,7 +60,7 @@
                         <div class="card">
                 
                             <div class="card-body">
-                                <h5 class="card-title" style="font-size: 35px; text-align: center;">'.$discussion['titre'].'</h5>
+                                <h1 class="card-title text-center">'.$discussion['titre'].'</h1>
                 </div>
                 
                 <div class="modal-footer">
@@ -81,11 +81,11 @@
                 foreach ($comments as $Onecomment) {
 
         echo '
-                    <div class="acomment pb-5">
+                    <div class="acomment comment-width-reduct pb-5">
                     <p><span class="bold">Auteur : </span>'.$Onecomment['nom'].' '.$Onecomment['prenom'].'</p>
                     <p><span class="bold">Date de création : </span>'.$Onecomment['date_creation_comment_fr'].'</p>
                     <hr>
-                    <div class="text-center"><p>'.$Onecomment['contenu'].'</p></div>
+                    <div class="text-center font30">'.$Onecomment['contenu'].'</div>
                     <hr>
             ';
                 

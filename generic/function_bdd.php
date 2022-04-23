@@ -163,7 +163,7 @@
     function doAddDiscussion($contenu,$id){
         $db = Database::connect();
         date_default_timezone_set('Europe/Paris');
-        $datetime_en = date('Y-m-d h:i');
+        $datetime_en = date('Y-m-d H:i');
         $datetime_fr = date("d/m/Y H:i", strtotime($datetime_en));
         $datetime_fr = str_replace(":","h",$datetime_fr);
         $statement = $db->prepare("INSERT INTO discussion (titre,id_utilisateur,date_creation,date_creation_fr) values(?, ?, ?, ?)");
@@ -193,7 +193,7 @@
     function doAddComment($id_discussion,$contenu,$id_utilisateur){
         $db = Database::connect();
         date_default_timezone_set('Europe/Paris');
-        $datetime_en = date('Y-m-d h:i');
+        $datetime_en = date('Y-m-d H:i');
         $datetime_fr = date("d/m/Y H:i", strtotime($datetime_en));
         $datetime_fr = str_replace(":","h",$datetime_fr);
         $statement = $db->prepare("INSERT INTO comment (contenu,date_creation_comment,date_creation_comment_fr,id_discussion,id_utilisateur) values(?,?,?,?,?)");
