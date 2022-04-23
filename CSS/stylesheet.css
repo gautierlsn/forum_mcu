@@ -6,6 +6,7 @@
     width: auto;
     max-height: 72px;
     max-width: 250px;
+    margin-left: 2rem;
 }
 
 .logo-circle:hover {

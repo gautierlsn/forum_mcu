@@ -1,17 +1,28 @@
 <?php
     require 'database.php';
 
-    /*------------------------------------------------------------------------------------------------------------*/
-    //Partie utilisateur
+/*------------------------------------------------------------------------------------------------------------*/
+//Partie utilisateur
 
     //Connexion de l'utilisateur
     function connexion($email,$mdp){
-        $db = Database::connect();
-        $statement = $db->prepare("SELECT count(*) as nb FROM utilisateur WHERE email=? AND mdp=?");
-        $statement->execute(array($email,$mdp));
-        $results = $statement->fetch();
-        Database::disconnect();
-        return $results['nb'];
+        if(checkEmail($email) == 1){
+            $db = Database::connect();
+            $statement = $db->prepare("SELECT mdp FROM utilisateur WHERE email=?");
+            $statement->execute(array($email));
+            $results = $statement->fetch();
+            $hashed_password = $results['mdp'];
+            Database::disconnect();
+            if(password_verify($mdp, $hashed_password)) {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
     }
 
     //Vérification du mail de l'utilisateur
@@ -31,8 +42,9 @@
         }
         else{
             $db = Database::connect();
+            $hashed_password = password_hash($motdepasse, PASSWORD_DEFAULT); //Hash password
             $statementt = $db->prepare("INSERT INTO utilisateur (nom,prenom,dateNaiss,email,mdp,role) values(?, ?, ?, ?, ?, ?)");
-            $statementt->execute(array($nom, $prenom, $dateNaiss, $email, $motdepasse, 0));
+            $statementt->execute(array($nom, $prenom, $dateNaiss, $email, $hashed_password, 0));
             Database::disconnect();
             return true;
         }
@@ -79,8 +91,9 @@
     //Modification des informations du profil
     function doUpdateProfile($nom,$prenom,$dateNaiss,$email,$mdp,$id){
         $db = Database::connect();
+        $hashed_password = password_hash($mdp, PASSWORD_DEFAULT); //Hash password
         $statement = $db->prepare("UPDATE utilisateur set nom = ?, prenom = ?, dateNaiss = ?, email = ?, mdp = ? WHERE id_utilisateur = ?");
-        $statement->execute(array($nom,$prenom,$dateNaiss,$email,$mdp,$id));
+        $statement->execute(array($nom,$prenom,$dateNaiss,$email,$hashed_password,$id));
         Database::disconnect();
     }
 
@@ -104,8 +117,8 @@
         return $item;
     }
 
-    /*------------------------------------------------------------------------------------------------------------*/
-    //Partie discussion
+/*------------------------------------------------------------------------------------------------------------*/
+//Partie discussion
 
     //Récupérer toutes les discussions
     function getAllDiscussion(){
@@ -158,9 +171,8 @@
         Database::disconnect();
     }
 
-
-    /*------------------------------------------------------------------------------------------------------------*/
-    //Partie commentaire
+/*------------------------------------------------------------------------------------------------------------*/
+//Partie commentaire
 
     //Récupérer tous les commentaires d'une discussion
     function getAllCommentsByDiscussion($idDiscussion){
