@@ -1,7 +1,8 @@
 <?php
     //Affichage des informations du profil
-    function showInfoProfile($id){
+    function showInfoProfile($user){
         $mdp = "******";
+        $dateNaiss = date("d/m/Y", strtotime($user['dateNaiss']));
 
         echo '
         <div class="container mt-5">
@@ -12,10 +13,10 @@
                 <div>
                     <ul class="list-group-item-ul text-center">
                         <li class="list-group-item list-group-item-secondary" aria-current="true">Vos informations :</li>
-                        <li class="list-group-item">Nom : '.$_SESSION['nom'].'</li>
-                        <li class="list-group-item">Prénom : '.$_SESSION['prenom'].'</li>
-                        <li class="list-group-item">Date de naissance : '.$_SESSION['dateNaiss'].'</li>
-                        <li class="list-group-item">Email : '.$_SESSION['login'].'</li>
+                        <li class="list-group-item">Nom : '.$user['nom'].'</li>
+                        <li class="list-group-item">Prénom : '.$user['prenom'].'</li>
+                        <li class="list-group-item">Date de naissance : '.$dateNaiss.'</li>
+                        <li class="list-group-item">Email : '.$user['email'].'</li>
                         <li class="list-group-item">Mot de passe : '.$mdp.'</li>
                     </ul>
                 </div>
@@ -114,7 +115,7 @@
                     <h1 class="mx-auto text-center font50"><strong><i class="fas fa-angle-left"></i> Forum MCU <i class="fas fa-angle-right"></i></strong></h1>
                 </div>
         
-                <div class="row mt-5 mb-5">
+                <div class="row mt-3 mb-5">
                     <a href="../web_page/create_discussion.php" class="btn btn-perso-green btn-lg mx-auto">Créer une discussion <i class="fas fa-plus-circle" id="turn"></i></a>
                 </div>
         

@@ -4,7 +4,7 @@
     require("../generic/function_general.php");
     require("../generic/function_bdd.php");
 
-    //Test pour savoir si les identifiants correspondent à la Bdd
+    //On regarde si les identifiants transmis par l'utilisateur sont bon
     if ($exist = connexion($_POST['login'], $_POST['motdepasse'])){
         session($_POST['login']);
         header("location: ../web_page/forum.php");

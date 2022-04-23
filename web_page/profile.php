@@ -11,6 +11,8 @@
 
     verifLogin();
 
+    $user = getUserInfo();
+
     //Affiche les informations de l'utilisateur
-    showInfoProfile($_SESSION['id']);
+    showInfoProfile($user);
 ?>

@@ -87,7 +87,7 @@
     //Récupération du profil de l'utilisateur
     function getUserInfo(){
         $db = Database::connect();
-        $statement = $db->prepare("SELECT nom, prenom, dateNaiss, email, mdp FROM utilisateur where id_utilisateur = ?");
+        $statement = $db->prepare("SELECT * FROM utilisateur where id_utilisateur = ?");
         $statement->execute(array($_SESSION['id']));
         $item = $statement->fetch();
         Database::disconnect();
