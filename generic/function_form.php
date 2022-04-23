@@ -23,13 +23,13 @@ function login_form($msg_error)
                                     <!-- Formulaire de Login -->
                                     <form name="selectForm" id="login" data-type="login-form" action="script/do_login.php" method="POST">
                                         <div class="form-group row">
-                                            <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
+                                            <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
                                                 <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="login">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
+                                            <label for="password" class="col-md-4 col-form-label text-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
                                             <div class="col-md-6">
                                                 <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse">
                                             </div>
@@ -73,48 +73,38 @@ function register_form($msg_error)
                                         </div>
                                     </div> 
                                     <div class="card-body overflow-hidden">
-                                        <!-- Formulaire de Login -->
                                         <script src=".$scriptjs."></script>
                                         <form name="selectForm" id="login" data-type="login-form" action="../script/do_inscription.php" method="POST" onsubmit="return validateInscription()">
                                             <div class="form-group row">
-                                                <label for="nom" class="col-md-4 col-form-label text-md-center text-nowrap">Nom <i class="fas fa-user"></i></label>
-                                                <div class="col-md-6">
-                                                    <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom">
-                                                </div>
+                                                <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
+                                                <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom">
                                             </div>
                                             <div class="form-group row">
-                                                <label for="prenom" class="col-md-4 col-form-label text-md-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
-                                                <div class="col-md-6">
-                                                    <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom">
-                                                </div>
+                                                <label for="prenom" class="col-md-4 col-form-label text-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
+                                                <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="dateNaiss" class="col-md-4 col-form-label text-md-center text-nowrap">Date de naissance <i class="fas fa-user"></i></label>
+                                            <div class="form-group row mx-auto">
+                                                <label for="dateNaiss" class="col-md-4 col-form-label text-center text-nowrap">Date de naissance <i class="fas fa-birthday-cake"></i></label>
                                                 <div class="col-md-6 text-center">
-                                                    <input type="date" id="dateNaiss" name="dateNaiss" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+                                                    <input type="date" id="dateNaiss" name="dateNaiss">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="email_address" class="col-md-4 col-form-label text-md-center text-nowrap">Email <i class="fas fa-user"></i></label>
-                                                <div class="col-md-6">
-                                                    <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="email">
-                                                </div>
+                                                <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-at"></i></label>
+                                                <input type="text" id="email_address" placeholder="Votre email" class="form-control" name="email">
                                             </div>
                                             <div class="form-group row">
-                                                <label for="password" class="col-md-4 col-form-label text-md-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
-                                                <div class="col-md-6">
-                                                    <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse">
-                                                </div>
+                                                <label for="password" class="col-md-4 col-form-label text-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
+                                                <input type="password" id="password" placeholder="Votre mot de passe" class="form-control" name="motdepasse">
                                             </div>
                                             <div class="col-md-12 text-center mt-3">
                                                 <a href="../index.php">Vous possédez déjà un compte ?</a>
                                             </div>
-                                            <div class="col-md-12 text-center mt-3">
+                                            <div class="col-md-12 text-center">
                                                 <button type="submit" class="btn btn-perso-blue btn-lg mt-2">S\'incrire <i class="fas fa-user-plus" id="turn"></i></button>
                                                 <p class="red bold">' . $msg_error . '</p>
                                             </div>
                                         </form>
-                                        <!-- ./Formulaire de Login -->
                                     </div>
                                 </div>
                             </div>
@@ -173,33 +163,30 @@ function updateProfileForm($user, $nameError, $prenomError, $adresseError, $logi
                 <div class="row mt-3">
                     <div class="col-md-12">
                         <form class="form form-width-reduct" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label for="nom" class="form-label" >Nom :</label>
+                            <div class="form-group row">
+                                <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
                                 <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '">
-                                <span class="help-inline">' . $nameError . '</span>
                             </div>
-                            <div class="mb-3">
-                                <label for="prenom" class="form-label">Prénom :</label>
+                            <div class="form-group row">
+                                <label for="prenom" class="col-md-4 col-form-label text-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
                                 <input type="text" class="form-control" id="prenom" name="prenom" value="' . $user['prenom'] . '">
-                                <span class="help-inline">' . $prenomError . '</span>
                             </div>
-                            <div class="mb-3">
-                                <label for="adresse" class="form-label">Date de naissance :</label>
-                                <input type="text" class="form-control" id="adresse" name="dateNaiss" value="' . $user['dateNaiss'] . '">
-                                <span class="help-inline">' . $adresseError . '</span>
+                            <div class="form-group row">
+                                <label for="dateNaiss" class="col-md-4 col-form-label text-center text-nowrap">Date de naissance <i class="fas fa-birthday-cake"></i></label>
+                                <div class="col-md-6 text-center">
+                                    <input type="date" id="dateNaiss" name="dateNaiss" value="' . $user['dateNaiss'] . '">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="login" class="form-label">Email :</label>
-                                <input type="text" class="form-control" id="login" name="email" value="' . $user['email'] . '">
-                                <span class="help-inline">' . $loginError . '</span>
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-at"></i></label>
+                                <input type="text" class="form-control" id="email" name="email" value="' . $user['email'] . '">
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Mot de passe :</label>
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
                                 <input type="password" class="form-control" id="password" name="mdp" value="' . $user['mdp'] . '">
-                                <span class="help-inline">' . $mdpError . '</span>
                             </div>
                             <div class="row">
-                                <div class="form-actions mx-auto mt-3">
+                                <div class="form-actions mx-auto">
                                     <a class="btn btn-perso-blue btn-lg" href="profile.php">Retour <i class="fas fa-arrow-alt-circle-left" id="turn"></i></a>
                                     <button type="submit" class="btn btn-perso-green btn-lg">Modifier <i class="fas fa-user-edit" id="turn"></i></button>
                                 </div>
