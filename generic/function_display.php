@@ -38,16 +38,14 @@
                 <div class="header pb-4 comment_tilte text-center" style="padding-top: 5%;">
                     <h1>Espace commentaire</h1>
                 </div>
-                <div class="container">
-                    <div class="align-items-center">
-                        <form action="../script/do_add.php?action=addComment" method="POST">
-                            <input type="hidden" value="'.$idDiscussion.'" name="idDiscussion">
-                            <textarea name="contenu" required id="editor1" class="form-control"></textarea>
-                            <div class="mx-auto text-center" style="padding-top: 1%">
-                                <button type="submit" name="submit" class="btn btn-perso-green btn-lg">Envoyer <i class="fas fa-paper-plane" id="turn"></i></button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="align-items-center">
+                    <form action="../script/do_add.php?action=addComment" method="POST">
+                        <input type="hidden" value="'.$idDiscussion.'" name="idDiscussion">
+                        <textarea name="contenu" required id="editor1" class="form-control"></textarea>
+                        <div class="mx-auto text-center" style="padding-top: 1%">
+                            <button type="submit" name="submit" class="btn btn-perso-green btn-lg">Envoyer <i class="fas fa-paper-plane" id="turn"></i></button>
+                        </div>
+                    </form>
                 </div>
             ';
     }
@@ -70,11 +68,9 @@
 
                 </div>
                 
-                <div class="comments_article">
-                    <div class="container show_article_container">';
+                <div class="comments_article">';
                     postComments($idDiscussion);
         echo '
-                    </div>
                 </div>
                 <div class="separator_white"></div>
             ';
@@ -105,6 +101,7 @@
 
         echo ' 
                 </div>
+                <a href="#" id="back-to-top" class="text-center" style="display: block;"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
         ';
     }
 
@@ -174,12 +171,13 @@
                             <tbody class="text-center">
                     ';
                     foreach($users as $user){
+                        $date_fr = date("d/m/Y", strtotime($user['dateNaiss']));
                         echo '
                             <tr>
                                 <td>'.$user['nom'].'</td>
                                 <td>'. $user['prenom'].'</td>
-                                <td>'. $user['dateNaiss'].'</td>
-                                <td style="font-size: 11px">'. $user['email'] . '</td>
+                                <td>'. $date_fr.'</td>
+                                <td class="font11">'. $user['email'] . '</td>
                                 <td>
                                     <a class="btn-admin btn-perso-red-admin" href="../script/do_delete.php?action=deleteUser&id='.$user['id_utilisateur'].'"><i class="fas fa-trash" id="turn"></i></a>
                                 </td>

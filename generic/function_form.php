@@ -129,7 +129,6 @@ function createDiscussionForm($id)
                     <div class="col-md-8">
                         <form class="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
-                                <label for="contenu" class="form-label" >Contenu :</label>
                                 <input type="text" class="form-control" id="contenu" name="contenu" required="required" minlength="">
                             </div>
                             <div class="row">
