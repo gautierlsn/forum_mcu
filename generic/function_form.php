@@ -19,8 +19,6 @@ function login_form($msg_error)
                                     </div>
                                 </div> 
                                 <div class="card-body overflow-hidden">
-                                
-                                    <!-- Formulaire de Login -->
                                     <form name="selectForm" id="login" data-type="login-form" action="script/do_login.php" method="POST">
                                         <div class="form-group row">
                                             <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-user"></i></label>
@@ -37,12 +35,11 @@ function login_form($msg_error)
                                         <div class="col-md-12 text-center mt-3">
                                             <a href="web_page/inscription.php">Pas encore de compte ?</a>
                                         </div>
-                                        <div class="col-md-12 text-center mt-3">
+                                        <div class="col-md-12 text-center">
                                             <button type="submit" class="btn btn-perso-blue btn-lg mt-2">Se connecter <i class="fas fa-sign-in-alt" id="turn"></i></button>
                                             <p class="red bold">' . $msg_error . '</p>
                                         </div>
                                     </form>
-                                    <!-- ./Formulaire de Login -->
                                 </div>
                             </div>
                         </div>
@@ -150,7 +147,7 @@ function createDiscussionForm($id)
 }
 
 //Formulaire pour modifier les informations du profil
-function updateProfileForm($user, $nameError, $prenomError, $adresseError, $loginError, $mdpError)
+function updateProfileForm($user)
 {
     $mdp = "******";
 
@@ -162,7 +159,7 @@ function updateProfileForm($user, $nameError, $prenomError, $adresseError, $logi
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-12">
-                        <form class="form form-width-reduct" action="update_profile.php" role="form" method="post" enctype="multipart/form-data">
+                        <form class="form form-width-reduct" action="../script/do_update.php?action=updateProfile" role="form" method="post" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
                                 <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '" required="required">

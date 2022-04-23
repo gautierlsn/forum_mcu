@@ -8,7 +8,7 @@
     makeHead("css/stylesheet.css","js/jquery.js", "js/script.js");
 
     if(isset($_SESSION['errorLogin'])){
-        $msg_error = "Erreur : Identifiants / Mot de passe invalide";
+        $msg_error = "L'email ou le mot de passe est incorrect !";
         unset($_SESSION['errorLogin']);
     }
     else{

@@ -5,7 +5,7 @@ $(document).ready(function () {
     }
 });
 
-function validateInscription() {
+/*function validateInscription() {
     var nom = document.forms["selectForm"]["nom"].value;
     var prenom = document.forms["selectForm"]["prenom"].value;
     var email = document.forms["selectForm"]["email"].value;
@@ -14,4 +14,4 @@ function validateInscription() {
         alert("Merci de remplir tout les champs");
         return false;
     }
-}
+}*/
