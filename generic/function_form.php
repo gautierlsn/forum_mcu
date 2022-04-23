@@ -19,7 +19,7 @@ function login_form($msg_error)
                                     </div>
                                 </div> 
                                 <div class="card-body overflow-hidden">
-                                    <form name="selectForm" id="login" data-type="login-form" action="script/do_login.php" method="POST">
+                                    <form name="selectForm" class="form-width-reduct" id="login" data-type="login-form" action="script/do_login.php" method="POST">
                                         <div class="form-group row">
                                             <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-user"></i></label>
                                             <div class="col-md-6">
@@ -71,7 +71,7 @@ function register_form($msg_error)
                                     </div> 
                                     <div class="card-body overflow-hidden">
                                         <script src=".$scriptjs."></script>
-                                        <form name="selectForm" id="login" data-type="login-form" action="../script/do_inscription.php" method="POST" onsubmit="return function ValidateSign(login)">
+                                        <form name="selectForm" id="login" class="form-width-reduct" data-type="login-form" action="../script/do_inscription.php" method="POST" onsubmit="return function ValidateSign(login)">
                                             <div class="form-group row">
                                                 <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
                                                 <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom" required="required" minlength="6">
