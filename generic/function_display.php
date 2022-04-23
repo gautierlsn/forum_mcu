@@ -130,7 +130,7 @@
                                     <div class="mt-2">
                                     <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="btn btn-perso-blue">Voir <i class="fas fa-eye" id="turn"></i></a>
         ';
-                                    if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1){
+                                    if (isset($_SESSION['role']) && $_SESSION['role'] == 1){
         echo '      
                                         <a href="../script/do_delete.php?action=deleteDiscussion&idDiscussion='.$discussion['id_discussion'].'" class="btn btn-perso-red" >Supprimer <i class="fas fa-trash-alt" id="turn"></i></a>
         ';
