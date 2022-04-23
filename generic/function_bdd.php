@@ -111,7 +111,7 @@
     function getAllDiscussion(){
         $db = Database::connect();
         $request_get_topics = $db->query(
-            'SELECT id_discussion, titre, date_creation, D.id_utilisateur, U.nom, U.prenom
+            'SELECT *
             FROM discussion D, utilisateur U
             WHERE D.id_utilisateur = U.id_utilisateur
             ');
@@ -124,7 +124,7 @@
     function getOneDiscussion($idDiscussion){
         $db = Database::connect();
         $statement = $db->prepare(
-            'SELECT id_discussion, titre, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%i\') AS date_creation_fr, D.id_utilisateur, U.nom, U.prenom
+            'SELECT *
             FROM discussion D, utilisateur U
             WHERE D.id_utilisateur = U.id_utilisateur
             AND id_discussion = ?;
@@ -149,9 +149,12 @@
     //Ajout d'une discussion
     function doAddDiscussion($contenu,$id){
         $db = Database::connect();
-        $date_creation = date("Y-m-d");
-        $statement = $db->prepare("INSERT INTO discussion (titre,date_creation,id_utilisateur) values(?, ?, ?)");
-        $statement->execute(array($contenu,$date_creation,$id));
+        date_default_timezone_set('Europe/Paris');
+        $datetime_en = date('Y-m-d h:i');
+        $datetime_fr = date("d/m/Y H:i", strtotime($datetime_en));
+        $datetime_fr = str_replace(":","h",$datetime_fr);
+        $statement = $db->prepare("INSERT INTO discussion (titre,id_utilisateur,date_creation,date_creation_fr) values(?, ?, ?, ?)");
+        $statement->execute(array($contenu,$id,$datetime_en,$datetime_fr));
         Database::disconnect();
     }
 
@@ -163,7 +166,7 @@
     function getAllCommentsByDiscussion($idDiscussion){
         $db = Database::connect();
         $request_get_comments = $db->prepare(
-            'SELECT id_comment, contenu, date_creation_comment, id_discussion, M.id_utilisateur, U.nom, U.prenom
+            'SELECT *
             FROM comment M, utilisateur U
             WHERE M.id_utilisateur = U.id_utilisateur
             AND id_discussion = ? 
@@ -175,10 +178,14 @@
     }
 
     //Ajouter un commentaire à une discussion
-    function doAddComment($id_discussion,$contenu,$date_creation_comment,$id_utilisateur){
+    function doAddComment($id_discussion,$contenu,$id_utilisateur){
         $db = Database::connect();
-        $statement = $db->prepare("INSERT INTO comment (contenu,date_creation_comment,id_discussion,id_utilisateur) values(?, ?, ?, ?)");
-        $statement->execute(array($contenu,$date_creation_comment,$id_discussion,$id_utilisateur));
+        date_default_timezone_set('Europe/Paris');
+        $datetime_en = date('Y-m-d h:i');
+        $datetime_fr = date("d/m/Y H:i", strtotime($datetime_en));
+        $datetime_fr = str_replace(":","h",$datetime_fr);
+        $statement = $db->prepare("INSERT INTO comment (contenu,date_creation_comment,date_creation_comment_fr,id_discussion,id_utilisateur) values(?,?,?,?,?)");
+        $statement->execute(array($contenu,$datetime_en,$datetime_fr,$id_discussion,$id_utilisateur));
         Database::disconnect();
     }
 

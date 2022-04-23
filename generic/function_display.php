@@ -63,9 +63,8 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <p style="font-weight: bold">Discussion créée par : </p> <p>'.$discussion['nom'].' '.$discussion['prenom'].'</p>
-                    <br/>
-                    <p style="font-weight: bold"> Date de création : <p/> <p>'.$discussion['date_creation_fr'].'</p>
+                    <p><span class="bold">Auteur : </span>'.$discussion['nom'].' '.$discussion['prenom'].'</p>
+                    <p><span class="bold">Date de création : </span>'.$discussion['date_creation_fr'].'</p>
                 </div>
 
                 </div>
@@ -76,26 +75,26 @@
         echo '
                     </div>
                 </div>
+                <div class="separator_white"></div>
             ';
                 foreach ($comments as $Onecomment) {
-                    $date = $Onecomment['date_creation_comment'];
-                    $timestamp = strtotime($date);
-                    $newDate = date('d M Y à H:i', $timestamp);
 
         echo '
-                    <div class="acomment">
-                    <h2>'.$Onecomment['prenom'].'</h2>
+                    <div class="acomment pb-5 comment-width-reduct">
+                    <p><span class="bold">Auteur : </span>'.$Onecomment['nom'].' '.$Onecomment['prenom'].'</p>
+                    <p><span class="bold">Date de création : </span>'.$Onecomment['date_creation_comment_fr'].'</p>
                     <hr>
-                    <p>'.$Onecomment['contenu'].'</p>
+                    <div class="text-center"><p>'.$Onecomment['contenu'].'</p></div>
                     <hr>
-                    <p style="font-weight: bold">Posté le :</p> <p class="date_discussion">'.$newDate.'</p>
             ';
                 
                     if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1){
         echo '
-                        <a href="../script/do_delete.php?action=deleteComment&idComment='.$Onecomment['id_comment'].'&idDiscussion='.$idDiscussion.'">
-                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    <div class="text-center">
+                        <a href="../script/do_delete.php?action=deleteComment&idComment='.$Onecomment['id_comment'].'&idDiscussion='.$idDiscussion.'"
+                            class="btn btn-perso-red">Supprimer <i class="fas fa-trash-alt" id="turn"></i>
                         </a>
+                    </div>
             ';
                     }
         echo '
@@ -122,16 +121,13 @@
                 <div class="row mt-5">
         ';
                         foreach($discussions as $discussion){
-                            $date = $discussion['date_creation'];
-                            $timestamp = strtotime($date);
-                            $newDate = date('d M Y', $timestamp);
         echo '
                         <div class="col-md-12 text-center pb-4">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">'.$discussion['titre'].'</h5><hr>
-                                    <p>Auteur : '.$discussion['nom'].' '.$discussion['prenom'].'</p>
-                                    <p>Date de création : '.$newDate.'</p>
+                                    <p><span class="bold">Auteur : </span>'.$discussion['nom'].' '.$discussion['prenom'].'</p>
+                                    <p><span class="bold">Date de création : </span> '.$discussion['date_creation_fr'].'</p>
                                     <div class="mt-2">
                                     <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="btn btn-perso-blue">Voir <i class="fas fa-eye" id="turn"></i></a>
         ';

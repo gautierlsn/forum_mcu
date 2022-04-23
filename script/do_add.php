@@ -18,10 +18,9 @@
     if($action == "addComment"){
         $id_discussion = $_POST['idDiscussion'];
         $contenu = $_POST['contenu'];
-        $date_creation_comment = date("Y-m-d");
         $id_utilisateur = $_SESSION['id'];
 
-        doAddComment($id_discussion,$contenu,$date_creation_comment,$id_utilisateur);
+        doAddComment($id_discussion,$contenu,$id_utilisateur);
 
         header("location: ../web_page/view_discussion.php?idDiscussion=$id_discussion");
     }

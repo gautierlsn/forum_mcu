@@ -27,19 +27,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
-
-#back-to-top {
-    border-radius: 25px;
-    background-color: white;
-}
-
 #back-to-top {
     position: fixed;
     width: 40px;
     height: 40px;
     right: 20px;
     bottom: 20px;
-    background: none;
+    color: black;
+    border-radius: 25px;
     animation-duration: 1s;
     z-index: 9;
 }
@@ -185,6 +180,11 @@ div.card img {
     font-weight: bold;
 }
 
+.modal-footer{
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 a .btn .btn-primary .block {
     margin-top: 10px;
 }
@@ -310,12 +310,14 @@ form[data-type="login-form"], form[data-type="register-form"] {
     font-family: "Quicksand", sans-serif;
 }
 
-form .btn > i#turn {
+form .btn > i#turn,
+a > i#turn{
     transition: 0.55s;
     transform: rotate(0deg);
 }
 
-form .btn:hover > i#turn {
+form .btn:hover > i#turn,
+a:hover > i#turn{
     transition: 0.55s;
     transform: rotate(360deg);
 }
@@ -423,23 +425,10 @@ form[data-type="register-form"] div button {
     border-color: #007bff;
 }
 
-.btn-danger {
+.btn-perso-red {
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545
-}
-
-.btn-danger:hover {
-    color: #fff;
-    background-color: #c82333;
-    border-color: #bd2130
-}
-
-.btn-danger.focus, .btn-danger:focus {
-    color: #fff;
-    background-color: #c82333;
-    border-color: #bd2130;
-    box-shadow: 0 0 0 .2rem rgba(225, 83, 97, .5)
 }
 
 .btn-group-lg > .btn, .btn-lg {
@@ -461,7 +450,7 @@ form[data-type="register-form"] div button {
 
 /*NavBar*/
 .topnav {
-    background: #1b1b1b;
+    background: black;
     font-family: Quicksand, sans-serif;
     font-weight: 500;
 }
@@ -496,10 +485,10 @@ nav ul li a {
 
 nav ul li a.active,
 nav ul li a:hover {
-    color: cyan;
+    color: #0ad0a0;
     border-radius: 5px;
-    box-shadow: 0 0 5px #33ffff,
-    0 0 10px #66ffff;
+    box-shadow: 0 0 5px #0ad0a0,
+    0 0 10px #0ad0a0;
 }
 
 nav ul ul li a:hover {
@@ -718,16 +707,28 @@ nav ul ul ul li {
     margin-right: auto !important;
 }
 
+.mt-2 {
+    margin-top: 1rem !important;
+}
+
 .mt-3 {
     margin-top: 2rem !important;
 }
 
 .mt-5 {
-    margin-top: 3rem !important;
+    margin-top: 5rem !important;
 }
 
-.pb-4, .py-4 {
+.mb-5 {
+    margin-bottom: 5rem !important;
+}
+
+.pb-4 {
     padding-bottom: 1.5rem !important;
+}
+
+.pb-5 {
+    padding-bottom: 5rem !important;
 }
 
 .row {
@@ -751,6 +752,16 @@ nav ul ul ul li {
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: 0.25rem;
+}
+
+.form-width-reduct{
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.comment-width-reduct{
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 
 .card-body {
