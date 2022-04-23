@@ -35,14 +35,14 @@
     //Section pour rédiger un commentaire
     function postComments($idDiscussion){
         echo '
-                <div class="header pb-4 comment_tilte text-center" style="padding-top: 5%;">
+                <div class="header pb-4 comment_tilte text-center mt-5">
                     <h1>Espace commentaire</h1>
                 </div>
                 <div class="align-items-center">
                     <form action="../script/do_add.php?action=addComment" method="POST">
                         <input type="hidden" value="'.$idDiscussion.'" name="idDiscussion">
                         <textarea name="contenu" required id="editor1" class="form-control"></textarea>
-                        <div class="mx-auto text-center" style="padding-top: 1%">
+                        <div class="mx-auto text-center">
                             <button type="submit" name="submit" class="btn btn-perso-green btn-lg">Envoyer <i class="fas fa-paper-plane" id="turn"></i></button>
                         </div>
                     </form>
@@ -101,7 +101,7 @@
 
         echo ' 
                 </div>
-                <a href="#" id="back-to-top" class="text-center" style="display: block;"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
+                <a href="#" id="back-to-top" class="text-center"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
         ';
     }
 
@@ -144,7 +144,7 @@
         echo '
                 </div>
             </div>
-            <a href="#" id="back-to-top" class="text-center" style="display: block;"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
+            <a href="#" id="back-to-top" class="text-center"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
         ';
     }
 

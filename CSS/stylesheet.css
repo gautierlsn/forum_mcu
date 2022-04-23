@@ -948,6 +948,10 @@ table td {
         font-size: .8em;
     }
 
+    .font11{
+        font-size: 11px;
+    }
+
     table td::before {
         /*
         * aria-label has no advantage, it won't be read inside a table
