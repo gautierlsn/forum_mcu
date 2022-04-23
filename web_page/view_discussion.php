@@ -14,9 +14,8 @@
     $discussion = getOneDiscussion($idDiscussion);
     $comments = getAllCommentsByDiscussion($idDiscussion);
 
+    //Page de vue d'une discussion
     viewDiscussion($idDiscussion, $discussion, $comments);
-
-    require("../js/CKeditor.php");
 ?>
 
 

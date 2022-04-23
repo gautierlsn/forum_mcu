@@ -58,11 +58,10 @@
         $results = $statement->fetch();
         $_SESSION['id'] = $results['id_utilisateur'];
         $_SESSION['login'] = $results['email'];
-        $_SESSION['admin'] = $results['role'];
         $_SESSION['nom'] = $results['nom'];
         $_SESSION['prenom'] = $results['prenom'];
         $_SESSION['dateNaiss'] = $results['dateNaiss'];
-        $_SESSION['ROLE'] = $results['role'];
+        $_SESSION['role'] = $results['role'];
         Database::disconnect();
     }
 
@@ -75,7 +74,7 @@
 
     //Vérification si l'utilisateur est bel et bien connecté en tant qu'admin
     function verifAdmin(){
-        if (!$_SESSION['admin'] == 1){
+        if (!$_SESSION['role'] == 1){
             header("Location: ../Script_PHP/logout.php");
         }
     }

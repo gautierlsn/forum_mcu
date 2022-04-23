@@ -13,6 +13,6 @@
 
     $user = getUserInfo();
 
-    //Affiche les informations de l'utilisateur
+    //Affichage des informations de l'utilisateur
     showInfoProfile($user);
 ?>

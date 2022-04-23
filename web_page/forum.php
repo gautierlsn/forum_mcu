@@ -13,6 +13,7 @@
 
     $discussions = getAllDiscussion();
 
+    //Page d'accueil du forum
     viewForum($discussions);
 ?>
 

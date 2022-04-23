@@ -15,5 +15,6 @@
         $msg_error = "";
     }
 
+    //Formulaire d'inscription
     register_form($msg_error);
 ?>

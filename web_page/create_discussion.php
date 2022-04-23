@@ -9,6 +9,7 @@
     nav("forum.php","profile.php","admin.php","#");
 
     verifLogin();
-    
+
+    //Formulaire de création d'une discussion
     createDiscussionForm($_SESSION['id']);
 ?>

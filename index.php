@@ -15,5 +15,6 @@
         $msg_error = "";
     }
 
+    //Formulaire de connexion
     login_form($msg_error);
 ?>

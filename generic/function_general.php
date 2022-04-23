@@ -24,7 +24,7 @@ function makeHead($css,$jquery,$scriptjs){
 
 //Création de la navbar
 function nav($urlForum,$urlProfil,$urlAdmin,$active){
-if ($_SESSION['admin'] != 1){
+if ($_SESSION['role'] != 1){
     $urlAdmin = "";
 }
 echo '

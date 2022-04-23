@@ -103,6 +103,7 @@
                 </div>
                 <a href="#" id="back-to-top" class="text-center"><i class="fas fa-3x fa-chevron-circle-up"></i></a>
         ';
+        require("../js/CKeditor.php");
     }
 
     function viewForum($discussions){
