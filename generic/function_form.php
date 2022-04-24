@@ -160,11 +160,11 @@ function updateProfileForm($user)
                         <form class="form form-width-reduct" action="../script/do_update.php?action=updateProfile" method="post" enctype="multipart/form-data">
                             <div class="form-group ligne">
                                 <label for="nom" class="colonne-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
-                                <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '" required="required" minlength="6">
+                                <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '" required="required" minlength="3">
                             </div>
                             <div class="form-group ligne">
                                 <label for="prenom" class="colonne-4 col-form-label text-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
-                                <input type="text" class="form-control" id="prenom" name="prenom" value="' . $user['prenom'] . '" required="required" minlength="6">
+                                <input type="text" class="form-control" id="prenom" name="prenom" value="' . $user['prenom'] . '" required="required" minlength="3">
                             </div>
                             <div class="form-group ligne">
                                 <label for="dateNaiss" class="colonne-4 col-form-label text-center text-nowrap">Date de naissance <i class="fas fa-birthday-cake"></i></label>
