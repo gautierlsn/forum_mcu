@@ -26,7 +26,7 @@ body {
 body, html {
      height: 100%;
 }
-a .btn{
+a .bouton{
     margin-top: 10px;
 }
 h2 + input {
@@ -38,7 +38,7 @@ button + p {
 form + div {
     margin-top: 75px;
 }
-nav + form {
+menu + form {
     margin-top: 40px;
 }
 h2 {
@@ -144,6 +144,156 @@ a:hover {
     font-size: 15px;
     margin-left: 40px;
 }
+.conteneur {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.ligne {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.colonne-12 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.text-center {
+    text-align: center !important;
+}
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.margin-top-1{
+    margin-top: .25rem !important
+}
+.margin-top-2 {
+    margin-top: 1rem !important;
+}
+.margin-top-3 {
+    margin-top: 2rem !important;
+}
+.margin-top-5 {
+    margin-top: 5rem !important;
+}
+.margin-bottom-1 {
+    margin-bottom: 1rem !important;
+}
+.margin-bottom-5 {
+    margin-bottom: 5rem !important;
+}
+.padding-bottom-4 {
+    padding-bottom: 1.5rem !important;
+}
+.padding-bottom-5 {
+    padding-bottom: 5rem !important;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.card-title {
+    margin-bottom: 0.75rem;
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.colonne-4, .colonne-6, .colonne-8, .colonne-12{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px
+}
+.col-form-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5
+}
+.text-nowrap {
+    background-color: transparent !important;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+.form-group {
+    margin-bottom: 1rem
+}
+.form-actions {
+    padding-top: 1rem;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125)
+}
+.col-form-label {
+    padding-top: calc(.375rem + 1px);
+    padding-bottom: calc(.375rem + 1px);
+    margin-bottom: 0;
+    font-size: inherit;
+    line-height: 1.5
+}
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+table th,
+table td {
+    padding: 15px;
+    text-align: center;
+}
 
 /* Fin style général */
 
@@ -192,12 +342,12 @@ form[data-type="login-form"] .form-control:hover, form[data-type="register-form"
 form[data-type="login-form"], form[data-type="register-form"] {
     font-family: "Quicksand", sans-serif;
 }
-form .btn > i#turn,
+form .bouton > i#turn,
 a > i#turn {
     transition: 0.55s;
     transform: rotate(0deg);
 }
-form .btn:hover > i#turn,
+form .bouton:hover > i#turn,
 a:hover > i#turn {
     transition: 0.55s;
     transform: rotate(360deg);
@@ -266,7 +416,7 @@ form[data-type="register-form"] div button {
 
 /* Boutons */
 
-.btn {
+.bouton {
     display: inline-block;
     font-weight: 400;
     color: #ffffff;
@@ -285,43 +435,43 @@ form[data-type="register-form"] div button {
     border-radius: 0.25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-.btn:hover {
+.bouton:hover {
     color: #212529;
     text-decoration: none;
 }
-.btn-perso-green {
+.bouton-perso-green {
     margin-top: 0;
     background-color: #0ad0a0;
 }
-.btn-perso-blue {
+.bouton-perso-blue {
     background-color: #007bff;
     border-color: #007bff;
 }
-.btn-perso-red {
+.bouton-perso-red {
     color: #fff;
     background-color: #dc3545;
 }
-.btn-perso-red-admin {
+.bouton-perso-red-admin {
     color: red;
 }
-.btn-admin {
+.bouton-admin {
     color: red;
     text-align: center;
     padding: 0.2rem 0.5rem;
     border-radius: 0.25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
-td .btn-admin {
+td .bouton-admin {
     padding: 0;
 }
-.btn-group-lg > .btn, .btn-lg {
+.bouton-group-lg > .bouton, .bouton-lg {
     font-size: 1.25rem;
     line-height: 1.5;
     border-radius: 0.3rem;
     padding: 1rem 1rem 0.5rem;
     margin-top: 0.5rem;
 }
-.btn-lg {
+.bouton-lg {
     padding: 0.5rem 1rem;
     font-size: 1.25rem;
     line-height: 1.5;
@@ -332,48 +482,48 @@ td .btn-admin {
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* NavBar */
+/* Menu */
 
-.topnav {
+.topmenu {
     background: black url("../images/marvelImage.jpg") no-repeat center;
     font-family: Quicksand, sans-serif;
     font-weight: 500;
 }
-nav:after {
+menu:after {
     content: '';
     clear: both;
     display: table;
 }
-nav ul {
+menu ul {
     float: right;
     margin-right: 40px;
     list-style: none;
     position: relative;
 }
-nav ul li {
+menu ul li {
     float: left;
     display: inline-block;
     background: #1b1b1b;
     margin: 0 5px;
 }
-nav ul li a {
+menu ul li a {
     color: white;
     line-height: 70px;
     text-decoration: none;
     font-size: 18px;
     padding: 8px 15px;
 }
-nav ul li a.active,
-nav ul li a:hover {
+menu ul li a.active,
+menu ul li a:hover {
     color: #0ad0a0;
     border-radius: 5px;
     box-shadow: 0 0 5px #0ad0a0,
     0 0 10px #0ad0a0;
 }
-nav ul ul li a:hover {
+menu ul ul li a:hover {
     box-shadow: none;
 }
-nav ul ul {
+menu ul ul {
     position: absolute;
     top: 90px;
     border-top: 3px solid cyan;
@@ -381,15 +531,15 @@ nav ul ul {
     visibility: hidden;
     transition: top .3s;
 }
-nav ul ul ul {
+menu ul ul ul {
     border-top: none;
 }
-nav ul li:hover > ul {
+menu ul li:hover > ul {
     top: 70px;
     opacity: 1;
     visibility: visible;
 }
-nav ul ul li {
+menu ul ul li {
     position: relative;
     margin: 0;
     width: 150px;
@@ -397,181 +547,26 @@ nav ul ul li {
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
-nav ul ul li a {
+menu ul ul li a {
     line-height: 50px;
 }
-nav ul ul ul li {
+menu ul ul ul li {
     position: relative;
     top: -60px;
     left: 150px;
 }
-.show, .icon, #btn-1, #btn {
+.show, .icon, #bouton-1, #bouton {
     display: none;
 }
 
-/* Fin NavBar */
-
-/*----------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* Style bootstrap */
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-.col-md-12 {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-.text-center {
-    text-align: center !important;
-}
-.mx-auto {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-.mt-2 {
-    margin-top: 1rem !important;
-}
-.mt-3 {
-    margin-top: 2rem !important;
-}
-.mt-5 {
-    margin-top: 5rem !important;
-}
-.mb-1 {
-    margin-bottom: 1rem !important;
-}
-.mb-5 {
-    margin-bottom: 5rem !important;
-}
-.pb-4 {
-    padding-bottom: 1.5rem !important;
-}
-.pb-5 {
-    padding-bottom: 5rem !important;
-}
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: 0.25rem;
-}
-.card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem;
-}
-.card-title {
-    margin-bottom: 0.75rem;
-}
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, .1);
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-}
-.col-md-4, .col-md-6, .col-md-8, .col-md-12{
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px
-}
-.col-form-label {
-    padding-top: calc(.375rem + 1px);
-    padding-bottom: calc(.375rem + 1px);
-    margin-bottom: 0;
-    font-size: inherit;
-    line-height: 1.5
-}
-.text-nowrap {
-    background-color: transparent !important;
-}
-.form-control {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
-}
-.form-group {
-    margin-bottom: 1rem
-}
-.form-actions {
-    padding-top: 1rem;
-}
-.card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125)
-}
-.mt-1{
-    margin-top: .25rem !important
-}
-.col-form-label {
-    padding-top: calc(.375rem + 1px);
-    padding-bottom: calc(.375rem + 1px);
-    margin-bottom: 0;
-    font-size: inherit;
-    line-height: 1.5
-}
-table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    padding: 0;
-    width: 100%;
-    table-layout: fixed;
-}
-table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: .35em;
-}
-table th,
-table td {
-    padding: 15px;
-    text-align: center;
-}
+/* Fin Menu */
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Responsive */
 
 @media (min-width: 576px) {
-    .container {
+    .conteneur {
         max-width: 540px;
     }
 }
@@ -596,27 +591,27 @@ table td {
     }
 }
 @media (min-width: 768px) {
-    .col-md-12 {
+    .colonne-12 {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
     }
-    .container {
+    .conteneur {
         max-width: 720px;
     }
 }
 @media all and (max-width: 968px) {
-    nav ul {
+    menu ul {
         float: none;
     }
     .show + a, ul {
         display: none;
     }
-    nav ul li, nav ul ul li {
+    menu ul li, menu ul ul li {
         display: block;
         width: 100%;
     }
-    nav ul li a:hover {
+    menu ul li a:hover {
         box-shadow: none;
     }
     .show {
@@ -640,7 +635,7 @@ table td {
         cursor: pointer;
         font-size: 25px;
     }
-    nav ul ul {
+    menu ul ul {
         top: 70px;
         border-top: 0;
         float: none;
@@ -649,21 +644,21 @@ table td {
         opacity: 1;
         visibility: visible;
     }
-    nav ul ul a {
+    menu ul ul a {
         padding-left: 40px;
     }
-    nav ul ul ul a {
+    menu ul ul ul a {
         padding-left: 80px;
     }
-    nav ul ul ul li {
+    menu ul ul ul li {
         position: static;
     }
-    [id^=btn]:checked + ul {
+    [id^=bouton]:checked + ul {
         display: block;
     }
 }
 @media (min-width: 992px) {
-    .container {
+    .conteneur {
         max-width: 960px;
     }
     .form-width-reduct {
@@ -676,7 +671,7 @@ table td {
     }
 }
 @media (min-width: 1200px) {
-    .container {
+    .conteneur {
         max-width: 1140px;
     }
 }

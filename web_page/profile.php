@@ -7,7 +7,7 @@
     require("../generic/function_display.php");
 
     makeHead("../css/stylesheet.css","../js/jquery.js","../js/script.js");
-    nav("forum.php","#","admin.php","#");
+    menu("forum.php","#","admin.php","#");
 
     verifLogin();
 

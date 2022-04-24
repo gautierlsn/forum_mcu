@@ -22,19 +22,19 @@ function makeHead($css,$jquery,$scriptjs){
 ';
 }
 
-//Création de la navbar
-function nav($urlForum,$urlProfil,$urlAdmin,$active){
+//Création du menu
+function menu($urlForum,$urlProfil,$urlAdmin,$active){
 if ($_SESSION['role'] != 1){
     $urlAdmin = "";
 }
 echo '
 <body>
-    <nav class="topnav">
+    <menu class="topmenu">
         <a href="../web_page/forum.php"> <img src="../images/bouclier.png" class="image logo-circle"> </a>
-        <label for="btn" class="icon">
+        <label for="bouton" class="icon">
             <span class="fa fa-bars"></span>
         </label>
-        <input type="checkbox" id="btn">
+        <input type="checkbox" id="bouton">
         <ul class="text-center">
             <li><a class="'.($active == $urlForum ? "active" : "").'" href="'.$urlForum.'">Forum</a></li>
             <li><a class="'.($active == $urlProfil ? "active" : "").'" href="'.$urlProfil.'">Profil</a></li>';
@@ -44,7 +44,7 @@ echo '
              echo'
             <li><a href="../script/do_logout.php">Déconnexion</a></li>
         </ul>
-    </nav>
+    </menu>
 ';
 }
 
