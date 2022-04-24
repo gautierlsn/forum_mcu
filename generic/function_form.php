@@ -74,21 +74,21 @@ function register_form($msg_error)
                                         <form name="selectForm" id="login" class="form-width-reduct" data-type="login-form" onsubmit="return validateRegisterForm()" action="../script/do_inscription.php" method="POST">
                                             <div class="form-group row">
                                                 <label for="nom" class="col-md-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
-                                                <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom" required="required" minlength="3">
+                                                <input type="text" id="nom" placeholder="Votre nom" class="form-control" name="nom">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="prenom" class="col-md-4 col-form-label text-center text-nowrap">Prénom <i class="fas fa-user"></i></label>
-                                                <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom" required="required" minlength="3">
+                                                <input type="text" id="prenom" placeholder="Votre prénom" class="form-control" name="prenom">
                                             </div>
                                             <div class="form-group row mx-auto">
                                                 <label for="dateNaiss" class="col-md-4 col-form-label text-center text-nowrap">Date de naissance <i class="fas fa-birthday-cake"></i></label>
                                                 <div class="col-md-6 text-center">
-                                                    <input type="date" id="dateNaiss" name="dateNaiss" required="required">
+                                                    <input type="date" id="dateNaiss" name="dateNaiss">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="email_address" class="col-md-4 col-form-label text-center text-nowrap">Email <i class="fas fa-at"></i></label>
-                                                <input type="email" id="email_address" placeholder="Votre email" class="form-control" name="email" required="required" minlength="7">
+                                                <input type="email" id="email_address" placeholder="Votre email" class="form-control" name="email">
                                             </div>
                                             <div class="form-group row">
                                                 <label for="password" class="col-md-4 col-form-label text-center text-nowrap">Mot de passe <i class="fas fa-key"></i></label>
@@ -127,9 +127,9 @@ function createDiscussionForm($id)
                     <div class="col-md-2">
                     </div>
                     <div class="col-md-8">
-                        <form class="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" method="post" enctype="multipart/form-data">
+                        <form class="form" name="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" onsubmit="return ValidateCreateDiscussion()" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
-                                <input type="text" class="form-control" id="contenu" name="contenu" required="required" minlength="">
+                                <input type="text" class="form-control" id="contenu" name="contenu">
                             </div>
                             <div class="row">
                                 <div class="form-actions mx-auto mt-3">

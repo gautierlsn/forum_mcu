@@ -37,3 +37,13 @@ function ValidateSignForm(inputText) {
         return false;
     }
 }
+
+function ValidateCreateDiscussion(){
+    var a = document.forms["form"]["contenu"].value;
+
+    if (!a) {
+        alert("Merci de rentrer un nom de discussion valide");
+        return false;
+    }
+}
+
