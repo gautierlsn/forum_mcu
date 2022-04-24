@@ -310,6 +310,14 @@ table td {
 .bg {
     background-image: url("../images/mcu.jpg");
     background-color: #cccccc;
+    background-position: center;
+    background-size: cover;
+}
+.bg2 {
+    background-image: url("../images/mcu2.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-size: cover;
 }
 .login-form {
     padding-top: 25vh;

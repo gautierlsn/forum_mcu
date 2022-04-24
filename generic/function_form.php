@@ -55,7 +55,7 @@ function login_form($msg_error)
 function register_form($msg_error)
 {
     echo '
-            <body class="bg">
+            <body class="bg2">
                 <main class="register-form h-100">
                     <div class="conteneur h-100">
                         <div class="ligne h-100">
