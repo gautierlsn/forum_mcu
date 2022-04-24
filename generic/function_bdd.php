@@ -127,6 +127,7 @@ function getAllDiscussion(){
         'SELECT *
         FROM discussion D, utilisateur U
         WHERE D.id_utilisateur = U.id_utilisateur
+        ORDER BY date_creation DESC
         ');
     $all = $request_get_topics->fetchAll();
     Database::disconnect();

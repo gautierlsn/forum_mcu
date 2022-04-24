@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="ligne margin-top-3">
-                <a href="update_profile.php" class="bouton bouton-perso-blue bouton-lg mx-auto">Modifier <i class="fas fa-user-edit" id="turn"></i></i></a>
+                <a href="update_profile.php" class="bouton bouton-perso-blue bouton-lg mx-auto">Modifier <i class="fas fa-user-edit turn"></i></a>
             </div>
         </div>
     </body>
@@ -43,7 +43,7 @@
                         <input type="hidden" value="'.$idDiscussion.'" name="idDiscussion">
                         <textarea name="contenu" required id="editor1" class="form-control"></textarea>
                         <div class="mx-auto text-center">
-                            <button type="submit" name="submit" class="bouton bouton-perso-green bouton-lg">Envoyer <i class="fas fa-paper-plane" id="turn"></i></button>
+                            <button type="submit" name="submit" class="bouton bouton-perso-green bouton-lg">Envoyer <i class="fas fa-paper-plane turn"></i></button>
                         </div>
                     </form>
                 </div>
@@ -89,7 +89,7 @@
         echo '
                     <div class="text-center">
                         <a href="../script/do_delete.php?action=deleteComment&idComment='.$Onecomment['id_comment'].'&idDiscussion='.$idDiscussion.'"
-                            class="bouton bouton-perso-red">Supprimer <i class="fas fa-trash-alt" id="turn"></i>
+                            class="bouton bouton-perso-red">Supprimer <i class="fas fa-trash-alt turn"></i>
                         </a>
                     </div>
             ';
@@ -114,7 +114,7 @@
                 </div>
         
                 <div class="ligne margin-top-3 margin-bottom-5">
-                    <a href="../web_page/create_discussion.php" class="bouton bouton-perso-green bouton-lg mx-auto">Créer une discussion <i class="fas fa-plus-circle" id="turn"></i></a>
+                    <a href="../web_page/create_discussion.php" class="bouton bouton-perso-green bouton-lg mx-auto">Créer une discussion <i class="fas fa-plus-circle turn"></i></a>
                 </div>
         
                 <div class="ligne margin-top-5">
@@ -128,11 +128,11 @@
                                     <p><span class="bold">Auteur : </span>'.$discussion['nom'].' '.$discussion['prenom'].'</p>
                                     <p><span class="bold">Date de création : </span> '.$discussion['date_creation_fr'].'</p>
                                     <div class="margin-top-2">
-                                    <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="bouton bouton-perso-blue">Voir <i class="fas fa-eye" id="turn"></i></a>
+                                    <a href="view_discussion.php?idDiscussion='.$discussion['id_discussion'].'" class="bouton bouton-perso-blue">Voir <i class="fas fa-eye turn"></i></a>
         ';
                                     if (isset($_SESSION['role']) && $_SESSION['role'] == 1){
         echo '      
-                                        <a href="../script/do_delete.php?action=deleteDiscussion&idDiscussion='.$discussion['id_discussion'].'" class="bouton bouton-perso-red" >Supprimer <i class="fas fa-trash-alt" id="turn"></i></a>
+                                        <a href="../script/do_delete.php?action=deleteDiscussion&idDiscussion='.$discussion['id_discussion'].'" class="bouton bouton-perso-red" >Supprimer <i class="fas fa-trash-alt turn"></i></a>
         ';
                                     }
         echo ' 
@@ -180,7 +180,7 @@
                                 <td>'. $date_fr.'</td>
                                 <td class="font11">'. $user['email'] . '</td>
                                 <td>
-                                    <a class="bouton-admin bouton-perso-red-admin" href="../script/do_delete.php?action=deleteUser&id='.$user['id_utilisateur'].'"><i class="fas fa-trash" id="turn"></i></a>
+                                    <a class="bouton-admin bouton-perso-red-admin" href="../script/do_delete.php?action=deleteUser&id='.$user['id_utilisateur'].'"><i class="fas fa-trash turn"></i></a>
                                 </td>
                             </tr>
                         ';
@@ -191,7 +191,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </body>
     </html>
         ';

@@ -38,7 +38,7 @@ button + p {
 form + div {
     margin-top: 75px;
 }
-menu + form {
+nav + form {
     margin-top: 40px;
 }
 h2 {
@@ -356,13 +356,13 @@ form[data-type="login-form"] .form-control:hover, form[data-type="register-form"
 form[data-type="login-form"], form[data-type="register-form"] {
     font-family: "Quicksand", sans-serif;
 }
-form .bouton > i#turn,
-a > i#turn {
+form .bouton > .turn,
+a > .turn {
     transition: 0.55s;
     transform: rotate(0deg);
 }
-form .bouton:hover > i#turn,
-a:hover > i#turn {
+form .bouton:hover > .turn,
+a:hover > .turn {
     transition: 0.55s;
     transform: rotate(360deg);
 }
@@ -496,48 +496,48 @@ td .bouton-admin {
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-/* Menu */
+/* nav */
 
-.topmenu {
+.topnav {
     background: black url("../images/marvelImage.jpg") no-repeat center;
     font-family: Quicksand, sans-serif;
     font-weight: 500;
 }
-menu:after {
+nav:after {
     content: '';
     clear: both;
     display: table;
 }
-menu ul {
+nav ul {
     float: right;
     margin-right: 40px;
     list-style: none;
     position: relative;
 }
-menu ul li {
+nav ul li {
     float: left;
     display: inline-block;
     background: #1b1b1b;
     margin: 0 5px;
 }
-menu ul li a {
+nav ul li a {
     color: white;
     line-height: 70px;
     text-decoration: none;
     font-size: 18px;
     padding: 8px 15px;
 }
-menu ul li a.active,
-menu ul li a:hover {
+nav ul li a.active,
+nav ul li a:hover {
     color: #0ad0a0;
     border-radius: 5px;
     box-shadow: 0 0 5px #0ad0a0,
     0 0 10px #0ad0a0;
 }
-menu ul ul li a:hover {
+nav ul ul li a:hover {
     box-shadow: none;
 }
-menu ul ul {
+nav ul ul {
     position: absolute;
     top: 90px;
     border-top: 3px solid cyan;
@@ -545,15 +545,15 @@ menu ul ul {
     visibility: hidden;
     transition: top .3s;
 }
-menu ul ul ul {
+nav ul ul ul {
     border-top: none;
 }
-menu ul li:hover > ul {
+nav ul li:hover > ul {
     top: 70px;
     opacity: 1;
     visibility: visible;
 }
-menu ul ul li {
+nav ul ul li {
     position: relative;
     margin: 0;
     width: 150px;
@@ -561,10 +561,10 @@ menu ul ul li {
     display: list-item;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
-menu ul ul li a {
+nav ul ul li a {
     line-height: 50px;
 }
-menu ul ul ul li {
+nav ul ul ul li {
     position: relative;
     top: -60px;
     left: 150px;
@@ -573,7 +573,7 @@ menu ul ul ul li {
     display: none;
 }
 
-/* Fin Menu */
+/* Fin nav */
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -615,17 +615,17 @@ menu ul ul ul li {
     }
 }
 @media all and (max-width: 968px) {
-    menu ul {
+    nav ul {
         float: none;
     }
     .show + a, ul {
         display: none;
     }
-    menu ul li, menu ul ul li {
+    nav ul li, nav ul ul li {
         display: block;
         width: 100%;
     }
-    menu ul li a:hover {
+    nav ul li a:hover {
         box-shadow: none;
     }
     .show {
@@ -649,7 +649,7 @@ menu ul ul ul li {
         cursor: pointer;
         font-size: 25px;
     }
-    menu ul ul {
+    nav ul ul {
         top: 70px;
         border-top: 0;
         float: none;
@@ -658,13 +658,13 @@ menu ul ul ul li {
         opacity: 1;
         visibility: visible;
     }
-    menu ul ul a {
+    nav ul ul a {
         padding-left: 40px;
     }
-    menu ul ul ul a {
+    nav ul ul ul a {
         padding-left: 80px;
     }
-    menu ul ul ul li {
+    nav ul ul ul li {
         position: static;
     }
     [id^=bouton]:checked + ul {

@@ -36,7 +36,7 @@ function login_form($msg_error)
                                             <a href="web_page/inscription.php">Pas encore de compte ?</a>
                                         </div>
                                         <div class="colonne-12 text-center">
-                                            <button type="submit" class="bouton bouton-perso-blue bouton-lg margin-top-2">Se connecter <i class="fas fa-sign-in-alt" id="turn"></i></button>
+                                            <button type="submit" class="bouton bouton-perso-blue bouton-lg margin-top-2">Se connecter <i class="fas fa-sign-in-alt turn"></i></button>
                                             <p class="red bold">' . $msg_error . '</p>
                                         </div>
                                     </form>
@@ -98,7 +98,7 @@ function register_form($msg_error)
                                                 <a href="../index.php">Vous possédez déjà un compte ?</a>
                                             </div>
                                             <div class="colonne-12 text-center">
-                                                <button type="submit" class="bouton bouton-perso-blue bouton-lg margin-top-2">S\'incrire <i class="fas fa-user-plus" id="turn"></i></button>
+                                                <button type="submit" class="bouton bouton-perso-blue bouton-lg margin-top-2">S\'incrire <i class="fas fa-user-plus turn"></i></button>
                                                 <p class="red bold">' . $msg_error . '</p>
                                             </div>
                                         </form>
@@ -125,19 +125,20 @@ function createDiscussionForm($id)
                 </div>
                 <div class="ligne margin-top-3">
                     <div class="colonne-8">
-                        <form class="form" name="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" onsubmit="return ValidateCreateDiscussion()" method="post" enctype="multipart/form-data">
+                        <form class="form" name="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" onsubmit="return ValidateCreateDiscussion()" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="contenu" name="contenu">
                             </div>
                             <div class="ligne">
                                 <div class="form-actions mx-auto margin-top-3">
-                                    <a class="bouton bouton-perso-blue bouton-lg" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left" id="turn"></i></a>
-                                    <button type="submit" class="bouton bouton-perso-green bouton-lg">Créer <i class="fas fa-check" id="turn"></i></button>
+                                    <a class="bouton bouton-perso-blue bouton-lg" href="forum.php">Retour <i class="fas fa-arrow-alt-circle-left turn"></i></a>
+                                    <button type="submit" class="bouton bouton-perso-green bouton-lg">Créer <i class="fas fa-check turn"></i></button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+            </div>
         </body>
         </html>
         ';
@@ -156,7 +157,7 @@ function updateProfileForm($user)
                 </div>
                 <div class="ligne margin-top-3">
                     <div class="colonne-12">
-                        <form class="form form-width-reduct" action="../script/do_update.php?action=updateProfile" role="form" method="post" enctype="multipart/form-data">
+                        <form class="form form-width-reduct" action="../script/do_update.php?action=updateProfile" method="post" enctype="multipart/form-data">
                             <div class="form-group ligne">
                                 <label for="nom" class="colonne-4 col-form-label text-center text-nowrap">Nom <i class="fas fa-user"></i></label>
                                 <input type="text" class="form-control" id="nom" name="nom" value="' . $user['nom'] . '" required="required" minlength="6">
@@ -181,13 +182,14 @@ function updateProfileForm($user)
                             </div>
                             <div class="ligne">
                                 <div class="form-actions mx-auto">
-                                    <a class="bouton bouton-perso-blue bouton-lg" href="profile.php">Retour <i class="fas fa-arrow-alt-circle-left" id="turn"></i></a>
-                                    <button type="submit" class="bouton bouton-perso-green bouton-lg">Modifier <i class="fas fa-user-edit" id="turn"></i></button>
+                                    <a class="bouton bouton-perso-blue bouton-lg" href="profile.php">Retour <i class="fas fa-arrow-alt-circle-left turn"></i></a>
+                                    <button type="submit" class="bouton bouton-perso-green bouton-lg">Modifier <i class="fas fa-user-edit turn"></i></button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
+            </div>
         </body>
         </html>
         ';

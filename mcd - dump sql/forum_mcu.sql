@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   PRIMARY KEY (`id_comment`),
   KEY `Message_Discussion_FK` (`id_discussion`),
   KEY `Message_Utilisateur0_FK` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `comment`
@@ -61,13 +61,13 @@ INSERT INTO `comment` (`id_comment`, `contenu`, `date_creation_comment`, `id_dis
 DROP TABLE IF EXISTS `discussion`;
 CREATE TABLE IF NOT EXISTS `discussion` (
   `id_discussion` int NOT NULL AUTO_INCREMENT,
-  `titre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `titre` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
   `date_creation` datetime NOT NULL,
   `id_utilisateur` int NOT NULL,
   `date_creation_fr` varchar(50) NOT NULL,
   PRIMARY KEY (`id_discussion`),
   KEY `Discussion_Utilisateur_FK` (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `discussion`
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `mdp` varchar(150) NOT NULL,
   `role` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `utilisateur`
