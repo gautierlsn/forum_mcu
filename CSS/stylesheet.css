@@ -461,7 +461,7 @@ td .btn-admin {
 
 /*NavBar*/
 .topnav {
-    background: black;
+    background: black url("../images/marvelImage.jpg") no-repeat center;
     font-family: Quicksand, sans-serif;
     font-weight: 500;
 }
