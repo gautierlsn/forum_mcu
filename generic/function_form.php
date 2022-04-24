@@ -124,8 +124,6 @@ function createDiscussionForm($id)
                     <h1 class="text-center mx-auto font50">Créer votre discussion</h1><hr>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-2">
-                    </div>
                     <div class="col-md-8">
                         <form class="form" name="form" action="../script/do_add.php?action=addDiscussion&id=' . $id . '" role="form" onsubmit="return ValidateCreateDiscussion()" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
