@@ -85,7 +85,7 @@
                     <hr>
             ';
                 
-                    if (isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 1){
+                    if (isset($_SESSION['role']) && $_SESSION['role'] == 1){
         echo '
                     <div class="text-center">
                         <a href="../script/do_delete.php?action=deleteComment&idComment='.$Onecomment['id_comment'].'&idDiscussion='.$idDiscussion.'"
