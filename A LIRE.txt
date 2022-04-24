@@ -1,0 +1,31 @@
+Coordonnées si besoin:
+gautierluisin@gmail.com
+06 52 53 27 82
+
+----------------------------------------
+
+Pour accéder au site web :
+http://forum-mcu.alwaysdata.net/
+
+Compte utilisateur :
+jeandutronc@gmail.com
+Ironman13
+
+Compte admin :
+root@gmail.com	
+Admin13
+
+----------------------------------------
+
+Pour accéder à phpmyadmin :
+https://phpmyadmin.alwaysdata.com/
+
+Compte phpmyadmin:
+forum-mcu
+ForumMCU13
+
+----------------------------------------
+
+Pour installer le site web en local, il y a un dump de la bdd dans le dossier "mcd - dump sql".
+
+Il y a également un MCD présent dans ce dossier.
